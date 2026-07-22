@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-
 <main id="primary" class="content-area">
     <?php if (have_posts()) : ?>
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">

@@ -9,7 +9,7 @@
 <?php wp_body_open(); ?>
 
 <div id="page" class="min-h-screen flex flex-col">
-    <header id="masthead" class="bg-amber-900 text-white">
+    <header id="masthead" class="bg-primary text-white">
         <div class="container mx-auto px-4 py-4 flex items-center justify-between">
             <div class="site-branding">
                 <?php if (has_custom_logo()) : ?>

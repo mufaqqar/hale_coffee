@@ -6,7 +6,13 @@ module.exports = {
     './assets/js/*.js',
   ],
   theme: {
-    extend: {},
+    extend: {
+       colors: {
+        primary: 'var(--primary)',
+        secondary: 'var(--secondary)',
+        coff_black: 'var(--coff_black)',
+      },
+    },
   },
   plugins: [],
 }

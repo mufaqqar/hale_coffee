@@ -1,15 +1,29 @@
-<section class="relative bg-gradient-to-r from-amber-900 to-amber-700 text-white overflow-hidden">
-    <div class="absolute inset-0 bg-black/30 z-10"></div>
-    <div class="relative z-20 max-w-7xl mx-auto px-4 py-24 md:py-36">
-        <div class="max-w-2xl">
-            <span class="inline-block bg-amber-500 text-white text-sm font-semibold px-4 py-1 rounded-full mb-4">Welcome to Hale Coffee</span>
-            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">Experience the Finest Coffee Blends</h1>
-            <p class="text-lg md:text-xl text-amber-100 mb-8">Hand-selected beans from the world's best plantations, roasted to perfection for your daily brew.</p>
-            <div class="flex flex-wrap gap-4">
-                <a href="#" class="inline-block bg-amber-500 hover:bg-amber-400 text-white font-semibold px-8 py-3 rounded-lg transition duration-300">Shop Now</a>
-                <a href="#" class="inline-block border-2 border-white hover:bg-white hover:text-amber-900 text-white font-semibold px-8 py-3 rounded-lg transition duration-300">Explore Our Story</a>
+<section class="Main_slider">
+    <div class="main-slider">
+        <div class="w-full relative 2xl:h-[705px] md:h-[605px] overflow-hidden">
+            <iframe
+                class="absolute top-1/2 left-1/2 sm:w-[120vw] sm:h-[120vh] w-[220vw] h-[220vh] -translate-x-1/2 -translate-y-1/2"
+                src="https://www.youtube.com/embed/dfViGz8LoZE?autoplay=1&mute=1&controls=0&loop=1&playlist=dfViGz8LoZE"
+                allow="autoplay; fullscreen" frameborder="0">
+            </iframe>
+            <div class="video_overlay absolute h-full w-full bg-black/30">
+                <div class="hale_container relative z-10">
+                    <div class="md:w-1/2 w-full">
+                        <h1 class="md:text-5xl text-3xl font-semibold text-coff_black mb-3">
+                            Experience the Finest Coffee Blends
+                        </h1>
+
+                        <p class="text-coff_black md:text-2xl text-lg font-medium mb-8">
+                            Hand-selected beans from the world's best plantations, roasted to perfection for your daily
+                            brew.
+                        </p>
+
+                        <a href="#" class="">
+                            Shop Now <i class="fa fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent z-20"></div>
 </section>

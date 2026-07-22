@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-    --primary: "#d0ba90";
-    --secondary: "#c1662e";
-    --coff_black: "#16130f";
+    --primary: #d0ba90;
+    --secondary: #c1662e;
+    --coff_black: #16130f;
 }
 
 @theme inline {

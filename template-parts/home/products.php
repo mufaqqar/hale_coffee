@@ -2,7 +2,7 @@
     <div class="max-w-7xl mx-auto px-4">
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
             <div>
-                <span class="text-amber-600 font-semibold text-sm uppercase tracking-wider">Our Products</span>
+                <span class="text-secondary font-semibold text-base uppercase tracking-wider">Our Products</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-amber-900 mt-2">Bestsellers</h2>
                 <p class="text-gray-600 mt-3 max-w-xl">The most loved coffees chosen by our customers.</p>
             </div>

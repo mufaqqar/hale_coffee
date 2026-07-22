@@ -25,11 +25,11 @@
                         </h1>
                     <?php endif; ?>
                 </div>
-                <nav id="site-navigation" class="primary-navigation">
+                <nav id="site-navigation" class="primary-navigation md:block hidden w-full mx-auto">
                     <?php
                     wp_nav_menu([
                         'theme_location' => 'primary',
-                        'menu_class' => 'flex space-x-6 list-none m-0 p-0',
+                        'menu_class' => 'flex justify-center space-x-6 list-none m-0 p-0',
                         'container' => false,
                         'fallback_cb' => false,
                     ]);
@@ -38,4 +38,4 @@
             </div>
         </header>
 
-        <div id="content" class="container mx-auto px-4 py-8 flex-1">
+        <div id="content" class="">

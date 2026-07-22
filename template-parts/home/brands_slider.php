@@ -1,38 +1,104 @@
-<section class="py-12 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4">
+<section class="py-16">
+    <div class="w-full px-4">
         <div class="text-center mb-8">
-            <span class="text-amber-600 font-semibold text-sm uppercase tracking-wider">Trusted Brands</span>
-            <h2 class="text-2xl font-bold text-amber-900 mt-2">Brands We Carry</h2>
+            <span class="text-secondary font-semibold text-base uppercase tracking-wider">Trusted Brands</span>
+            <h2 class="md:text-4xl text-2xl font-bold text-coff_black capitalize mt-1">Trusted by 10,000+ awesome brands
+            </h2>
         </div>
-        <div class="flex flex-wrap items-center justify-center gap-8 md:gap-16">
-            <div class="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
-                <div class="h-12 flex items-center">
-                    <span class="text-2xl font-bold text-gray-400 hover:text-amber-800 transition-colors">LAVAZZA</span>
+        <div class="brand-slider">
+            <div class="px-4">
+                <div class="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brands/1.jpg" alt="brandlogo" />
                 </div>
             </div>
-            <div class="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
-                <div class="h-12 flex items-center">
-                    <span class="text-2xl font-bold text-gray-400 hover:text-amber-800 transition-colors">ILLY</span>
+            <div class="px-4">
+                <div class="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brands/2.jpg" alt="brandlogo" />
                 </div>
             </div>
-            <div class="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
-                <div class="h-12 flex items-center">
-                    <span class="text-2xl font-bold text-gray-400 hover:text-amber-800 transition-colors">NESPRESSO</span>
+            <div class="px-4">
+                <div class="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brands/3.jpg" alt="brandlogo" />
                 </div>
             </div>
-            <div class="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
-                <div class="h-12 flex items-center">
-                    <span class="text-2xl font-bold text-gray-400 hover:text-amber-800 transition-colors">DALLMAYR</span>
+            <div class="px-4">
+                <div class="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brands/4.jpg" alt="brandlogo" />
                 </div>
             </div>
-            <div class="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
-                <div class="h-12 flex items-center">
-                    <span class="text-2xl font-bold text-gray-400 hover:text-amber-800 transition-colors">STARBUCKS</span>
+            <div class="px-4">
+                <div class="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brands/5.jpg" alt="brandlogo" />
                 </div>
             </div>
-            <div class="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
-                <div class="h-12 flex items-center">
-                    <span class="text-2xl font-bold text-gray-400 hover:text-amber-800 transition-colors">PEET'S</span>
+            <div class="px-4">
+                <div class="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brands/6.jpg" alt="brandlogo" />
+                </div>
+            </div>
+            <div class="px-4">
+                <div class="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brands/7.jpg" alt="brandlogo" />
+                </div>
+            </div>
+            <div class="px-4">
+                <div class="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brands/8.jpg" alt="brandlogo" />
+                </div>
+            </div>
+            <div class="px-4">
+                <div class="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brands/9.jpg" alt="brandlogo" />
+                </div>
+            </div>
+            <div class="px-4">
+                <div class="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brands/10.jpg" alt="brandlogo" />
+                </div>
+            </div>
+            <div class="px-4">
+                <div class="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brands/11.jpg" alt="brandlogo" />
+                </div>
+            </div>
+            <div class="px-4">
+                <div class="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brands/12.jpg" alt="brandlogo" />
+                </div>
+            </div>
+            <div class="px-4">
+                <div class="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brands/13.jpg" alt="brandlogo" />
+                </div>
+            </div>
+            <div class="px-4">
+                <div class="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brands/14.jpg" alt="brandlogo" />
+                </div>
+            </div>
+            <div class="px-4">
+                <div class="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brands/15.jpg" alt="brandlogo" />
+                </div>
+            </div>
+            <div class="px-4">
+                <div class="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brands/16.jpg" alt="brandlogo" />
+                </div>
+            </div>
+            <div class="px-4">
+                <div class="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brands/17.jpg" alt="brandlogo" />
+                </div>
+            </div>
+            <div class="px-4">
+                <div class="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brands/18.jpg" alt="brandlogo" />
+                </div>
+            </div>
+            <div class="px-4">
+                <div class="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brands/19.jpg" alt="brandlogo" />
                 </div>
             </div>
         </div>

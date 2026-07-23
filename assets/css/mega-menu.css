@@ -1,0 +1,160 @@
+/* ============================================
+   Normal Dropdown Menu
+   ============================================ */
+.primary-navigation .menu > .menu-item {
+    position: relative;
+}
+
+.primary-navigation .menu > .menu-item > .sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    color: #16130f;
+    min-width: 220px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 100;
+    padding: 0.5rem 0;
+    border-radius: 0 0 6px 6px;
+}
+
+.primary-navigation .menu > .menu-item:hover > .sub-menu,
+.primary-navigation .menu > .menu-item > .sub-menu:hover {
+    opacity: 1;
+    visibility: visible;
+}
+
+.primary-navigation .sub-menu .menu-item a {
+    display: block;
+    padding: 0.6rem 1.5rem;
+    white-space: nowrap;
+    color: #16130f;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.primary-navigation .sub-menu .menu-item a:hover {
+    background: #f5f0eb;
+    color: #c1662e;
+}
+
+/* ============================================
+   Mega Menu
+   ============================================ */
+.primary-navigation .menu-item-mega {
+    position: static;
+}
+
+.primary-navigation .menu-item-mega > .mega-sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    color: #16130f;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 100;
+    padding: 2rem;
+    border-radius: 0 0 6px 6px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.primary-navigation .menu-item-mega:hover > .mega-sub-menu,
+.primary-navigation .menu-item-mega > .mega-sub-menu:hover {
+    opacity: 1;
+    visibility: visible;
+}
+
+.primary-navigation .mega-sub-menu .menu-item {
+    padding: 0;
+    list-style: none;
+    break-inside: avoid;
+}
+
+.primary-navigation .mega-sub-menu .menu-item a {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    color: #16130f;
+    text-decoration: none;
+    font-size: 0.95rem;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.primary-navigation .mega-sub-menu .menu-item a:hover {
+    background: #f5f0eb;
+    color: #c1662e;
+}
+
+/* ============================================
+   Mobile Styles
+   ============================================ */
+@media (max-width: 767px) {
+    #site-navigation {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #c1662e;
+        z-index: 200;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .primary-navigation .menu {
+        flex-direction: column;
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    .primary-navigation .menu > .menu-item {
+        position: relative;
+        width: 100%;
+    }
+
+    .primary-navigation .menu > .menu-item > a {
+        display: block;
+        padding: 0.75rem 1.5rem;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .primary-navigation .sub-menu,
+    .primary-navigation .mega-sub-menu {
+        position: static !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        box-shadow: none !important;
+        transform: none !important;
+        display: block !important;
+        grid-template-columns: 1fr !important;
+        gap: 0 !important;
+        padding: 0 0 0.5rem 1.5rem !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        left: auto !important;
+        right: auto !important;
+        background: transparent !important;
+        border-radius: 0 !important;
+    }
+
+    .primary-navigation .sub-menu .menu-item a,
+    .primary-navigation .mega-sub-menu .menu-item a {
+        color: rgba(255, 255, 255, 0.85);
+        padding: 0.5rem 1.5rem;
+    }
+
+    .primary-navigation .sub-menu .menu-item a:hover,
+    .primary-navigation .mega-sub-menu .menu-item a:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+    }
+}

@@ -12,7 +12,7 @@
 
     <div id="page" class="min-h-screen flex flex-col">
         <?php get_template_part('template-parts/header/topbar'); ?>
-        <header id="masthead" class="bg-secondary text-white">
+        <header id="masthead" class="bg-secondary text-white relative">
             <div class="container mx-auto px-4 py-4 flex items-center justify-between">
                 <div class="site-branding md:hidden inline-flex">
                     <?php if (has_custom_logo()): ?>
@@ -25,6 +25,9 @@
                         </h1>
                     <?php endif; ?>
                 </div>
+                <button class="menu-toggle md:hidden text-white text-2xl p-2" aria-label="Toggle menu" aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
                 <nav id="site-navigation" class="primary-navigation md:block hidden w-full mx-auto">
                     <?php
                     wp_nav_menu([
@@ -32,6 +35,7 @@
                         'menu_class' => 'flex justify-center space-x-6 list-none m-0 p-0',
                         'container' => false,
                         'fallback_cb' => false,
+                        'walker' => new Hale_Mega_Walker(),
                     ]);
                     ?>
                 </nav>

@@ -19,7 +19,7 @@
                         </p>
 
                         <a href="#"
-                            class="px-8 py-3.5 border border-secondary text-white bg-secondary hover:bg-primary hover:border-primary">
+                            class="text-sm font-medium px-8 py-3.5 border border-secondary text-white hover:text-coff_black bg-secondary hover:bg-primary hover:border-primary">
                             Shop Now <i class="fa fa-chevron-right"></i>
                         </a>
                     </div>

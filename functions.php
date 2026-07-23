@@ -47,8 +47,15 @@ function hale_coffee_enqueue_assets()
         true
     );
     wp_enqueue_script(
-        'hale-main',
-        get_template_directory_uri() . '/assets/js/main.js',
+        'hale-sliders',
+        get_template_directory_uri() . '/assets/js/sliders.js',
+        ['jquery', 'slick-js'],
+        wp_get_theme()->get('Version'),
+        true
+    );
+     wp_enqueue_script(
+        'hale-tabs',
+        get_template_directory_uri() . '/assets/js/coffe-tabs.js',
         ['jquery', 'slick-js'],
         wp_get_theme()->get('Version'),
         true

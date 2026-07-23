@@ -8,7 +8,7 @@
         <!-- Tabs -->
         <div class="container mx-auto flex flex-wrap gap-2 justify-start mb-12">
             <button class="tab-btn active" data-tab="tab1">
-                noissue Picks
+                Noissue Picks
             </button>
             <button class="tab-btn" data-tab="tab2">
                 Most Popular
@@ -20,8 +20,9 @@
         <!-- Tab 1 -->
         <div id="tab1" class="tab-content">
             <div class="noissue">
-                <div class="px-1.5">
-                    <div class="rounded-xl p-2 hover:shadow-md group overflow-hidden">
+                <div class="p-2">
+                    <div
+                        class="rounded-xl p-2 hover:shadow-md group transition-all ease-in-out duration-300 overflow-hidden">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/packaging-partner.jpg"
                             alt="" class="rounded-xl">
                         <div class="mt-1">
@@ -58,8 +59,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="px-1.5">
-                    <div class="rounded-xl p-2 hover:shadow-md group overflow-hidden">
+                <div class="p-2">
+                    <div
+                        class="rounded-xl p-2 hover:shadow-md group transition-all ease-in-out duration-300 overflow-hidden">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/packaging-partner.jpg"
                             alt="" class="rounded-xl">
                         <div class="mt-1">
@@ -96,8 +98,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="px-1.5">
-                    <div class="rounded-xl p-2 hover:shadow-md group overflow-hidden">
+                <div class="p-2">
+                    <div
+                        class="rounded-xl p-2 hover:shadow-md group transition-all ease-in-out duration-300 overflow-hidden">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/packaging-partner.jpg"
                             alt="" class="rounded-xl">
                         <div class="mt-1">
@@ -134,8 +137,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="px-1.5">
-                    <div class="rounded-xl p-2 hover:shadow-md group overflow-hidden">
+                <div class="p-2">
+                    <div
+                        class="rounded-xl p-2 hover:shadow-md group transition-all ease-in-out duration-300 overflow-hidden">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/packaging-partner.jpg"
                             alt="" class="rounded-xl">
                         <div class="mt-1">
@@ -172,8 +176,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="px-1.5">
-                    <div class="rounded-xl p-2 hover:shadow-md group overflow-hidden">
+                <div class="p-2">
+                    <div
+                        class="rounded-xl p-2 hover:shadow-md group transition-all ease-in-out duration-300 overflow-hidden">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/packaging-partner.jpg"
                             alt="" class="rounded-xl">
                         <div class="mt-1">
@@ -210,8 +215,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="px-1.5">
-                    <div class="rounded-xl p-2 hover:shadow-md group overflow-hidden">
+                <div class="p-2">
+                    <div
+                        class="rounded-xl p-2 hover:shadow-md group transition-all ease-in-out duration-300 overflow-hidden">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/packaging-partner.jpg"
                             alt="" class="rounded-xl">
                         <div class="mt-1">
@@ -248,8 +254,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="px-1.5">
-                    <div class="rounded-xl p-2 hover:shadow-md group overflow-hidden">
+                <div class="p-2">
+                    <div
+                        class="rounded-xl p-2 hover:shadow-md group transition-all ease-in-out duration-300 overflow-hidden">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/packaging-partner.jpg"
                             alt="" class="rounded-xl">
                         <div class="mt-1">
@@ -292,8 +299,9 @@
         <!-- Tab 2 -->
         <div id="tab2" class="tab-content hidden">
             <div class="popular">
-                <div class="px-1.5">
-                    <div class="rounded-xl p-2 hover:shadow-md group overflow-hidden">
+                <div class="p-2">
+                    <div
+                        class="rounded-xl p-2 hover:shadow-md group transition-all ease-in-out duration-300 overflow-hidden">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/packaging-partner.jpg"
                             alt="" class="rounded-xl">
                         <div class="mt-1">
@@ -330,8 +338,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="px-1.5">
-                    <div class="rounded-xl p-2 hover:shadow-md group overflow-hidden">
+                <div class="p-2">
+                    <div
+                        class="rounded-xl p-2 hover:shadow-md group transition-all ease-in-out duration-300 overflow-hidden">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/packaging-partner.jpg"
                             alt="" class="rounded-xl">
                         <div class="mt-1">
@@ -368,8 +377,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="px-1.5">
-                    <div class="rounded-xl p-2 hover:shadow-md group overflow-hidden">
+                <div class="p-2">
+                    <div
+                        class="rounded-xl p-2 hover:shadow-md group transition-all ease-in-out duration-300 overflow-hidden">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/packaging-partner.jpg"
                             alt="" class="rounded-xl">
                         <div class="mt-1">
@@ -406,8 +416,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="px-1.5">
-                    <div class="rounded-xl p-2 hover:shadow-md group overflow-hidden">
+                <div class="p-2">
+                    <div
+                        class="rounded-xl p-2 hover:shadow-md group transition-all ease-in-out duration-300 overflow-hidden">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/packaging-partner.jpg"
                             alt="" class="rounded-xl">
                         <div class="mt-1">
@@ -444,8 +455,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="px-1.5">
-                    <div class="rounded-xl p-2 hover:shadow-md group overflow-hidden">
+                <div class="p-2">
+                    <div
+                        class="rounded-xl p-2 hover:shadow-md group transition-all ease-in-out duration-300 overflow-hidden">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/packaging-partner.jpg"
                             alt="" class="rounded-xl">
                         <div class="mt-1">
@@ -482,8 +494,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="px-1.5">
-                    <div class="rounded-xl p-2 hover:shadow-md group overflow-hidden">
+                <div class="p-2">
+                    <div
+                        class="rounded-xl p-2 hover:shadow-md group transition-all ease-in-out duration-300 overflow-hidden">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/packaging-partner.jpg"
                             alt="" class="rounded-xl">
                         <div class="mt-1">
@@ -520,8 +533,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="px-1.5">
-                    <div class="rounded-xl p-2 hover:shadow-md group overflow-hidden">
+                <div class="p-2">
+                    <div
+                        class="rounded-xl p-2 hover:shadow-md group transition-all ease-in-out duration-300 overflow-hidden">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/packaging-partner.jpg"
                             alt="" class="rounded-xl">
                         <div class="mt-1">
@@ -564,8 +578,9 @@
         <!-- Tab 3 -->
         <div id="tab3" class="tab-content hidden">
             <div class="readytoship">
-                <div class="px-1.5">
-                    <div class="rounded-xl p-2 hover:shadow-md group overflow-hidden">
+                <div class="p-2">
+                    <div
+                        class="rounded-xl p-2 hover:shadow-md group transition-all ease-in-out duration-300 overflow-hidden">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/packaging-partner.jpg"
                             alt="" class="rounded-xl">
                         <div class="mt-1">
@@ -602,8 +617,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="px-1.5">
-                    <div class="rounded-xl p-2 hover:shadow-md group overflow-hidden">
+                <div class="p-2">
+                    <div
+                        class="rounded-xl p-2 hover:shadow-md group transition-all ease-in-out duration-300 overflow-hidden">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/packaging-partner.jpg"
                             alt="" class="rounded-xl">
                         <div class="mt-1">
@@ -640,8 +656,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="px-1.5">
-                    <div class="rounded-xl p-2 hover:shadow-md group overflow-hidden">
+                <div class="p-2">
+                    <div
+                        class="rounded-xl p-2 hover:shadow-md group transition-all ease-in-out duration-300 overflow-hidden">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/packaging-partner.jpg"
                             alt="" class="rounded-xl">
                         <div class="mt-1">
@@ -678,8 +695,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="px-1.5">
-                    <div class="rounded-xl p-2 hover:shadow-md group overflow-hidden">
+                <div class="p-2">
+                    <div
+                        class="rounded-xl p-2 hover:shadow-md group transition-all ease-in-out duration-300 overflow-hidden">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/packaging-partner.jpg"
                             alt="" class="rounded-xl">
                         <div class="mt-1">
@@ -716,8 +734,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="px-1.5">
-                    <div class="rounded-xl p-2 hover:shadow-md group overflow-hidden">
+                <div class="p-2">
+                    <div
+                        class="rounded-xl p-2 hover:shadow-md group transition-all ease-in-out duration-300 overflow-hidden">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/packaging-partner.jpg"
                             alt="" class="rounded-xl">
                         <div class="mt-1">
@@ -754,8 +773,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="px-1.5">
-                    <div class="rounded-xl p-2 hover:shadow-md group overflow-hidden">
+                <div class="p-2">
+                    <div
+                        class="rounded-xl p-2 hover:shadow-md group transition-all ease-in-out duration-300 overflow-hidden">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/packaging-partner.jpg"
                             alt="" class="rounded-xl">
                         <div class="mt-1">
@@ -792,8 +812,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="px-1.5">
-                    <div class="rounded-xl p-2 hover:shadow-md group overflow-hidden">
+                <div class="p-2">
+                    <div
+                        class="rounded-xl p-2 hover:shadow-md group transition-all ease-in-out duration-300 overflow-hidden">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/packaging-partner.jpg"
                             alt="" class="rounded-xl">
                         <div class="mt-1">

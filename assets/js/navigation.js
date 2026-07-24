@@ -27,3 +27,37 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+jQuery(function ($) {
+
+    // Open the first active item on page load
+    $('.avail-faq-item.active .avail-faq-content').each(function () {
+        $(this).css('max-height', this.scrollHeight + 'px');
+    });
+
+    $('.avail-faq-title').on('click', function () {
+
+        const item = $(this).closest('.avail-faq-item');
+        const content = item.find('.avail-faq-content');
+
+        if (item.hasClass('active')) {
+            item.removeClass('active');
+            content.removeClass('open').css('max-height', 0);
+            return;
+        }
+
+        // Close all
+        $('.avail-faq-item').removeClass('active');
+        $('.avail-faq-content')
+            .removeClass('open')
+            .css('max-height', 0);
+
+        // Open clicked
+        item.addClass('active');
+        content
+            .addClass('open')
+            .css('max-height', content.prop('scrollHeight') + 'px');
+
+    });
+
+});

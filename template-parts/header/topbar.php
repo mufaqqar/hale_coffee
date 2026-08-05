@@ -3,13 +3,15 @@
         class="container mx-auto px-4 py-1.5 flex md:flex-row flex-row-reverse md:gap-5 gap-5 items-center justify-between">
         <div class="site-branding md:block hidden">
             <?php if (has_custom_logo()): ?>
-                <?php the_custom_logo(); ?>
+                <a href="<?php echo esc_url(home_url('/')); ?>" class="inline-flex">
+                    <?php the_custom_logo(); ?>
+                </a>
+
             <?php else: ?>
-                <h1 class="text-2xl font-bold">
-                    <a href="<?php echo esc_url(home_url('/')); ?>" rel="home" class="text-coff_black no-underline">
-                        <?php bloginfo('name'); ?>
-                    </a>
-                </h1>
+                <a href="<?php echo esc_url(home_url('/')); ?>" class="inline-flex">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="Logo" height="60"
+                        width="80" />
+                </a>
             <?php endif; ?>
         </div>
         <div class="md:w-1/2">

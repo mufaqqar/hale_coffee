@@ -16,16 +16,18 @@
             <div class="container mx-auto px-4 py-4 flex items-center justify-between">
                 <div class="site-branding md:hidden inline-flex">
                     <?php if (has_custom_logo()): ?>
-                        <?php the_custom_logo(); ?>
+                        <a href="<?php echo esc_url(home_url('/')); ?>" class="inline-flex">
+                            <?php the_custom_logo(); ?>
+                        </a>
+                    
                     <?php else: ?>
-                        <h1 class="text-2xl font-bold">
-                            <a href="<?php echo esc_url(home_url('/')); ?>" rel="home" class="text-white no-underline">
-                                <?php bloginfo('name'); ?>
-                            </a>
-                        </h1>
+                        <a href="<?php echo esc_url(home_url('/')); ?>" class="inline-flex">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="Logo" height="60" width="60" />
+                        </a>
                     <?php endif; ?>
                 </div>
-                <button class="menu-toggle md:hidden text-white text-2xl p-2" aria-label="Toggle menu" aria-expanded="false">
+                <button class="menu-toggle md:hidden text-white text-2xl p-2" aria-label="Toggle menu"
+                    aria-expanded="false">
                     <i class="fa-solid fa-bars"></i>
                 </button>
                 <nav id="site-navigation" class="primary-navigation md:block hidden w-full mx-auto">

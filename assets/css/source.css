@@ -29,30 +29,81 @@
   }
 
 }
+
 @layer components {
-    .avail-faq-item {
-        @apply border border-primary rounded-xl overflow-hidden;
-    }
+  .avail-faq-item {
+    @apply border border-primary rounded-xl overflow-hidden;
+  }
 
-    .avail-faq-title {
-        @apply flex items-center justify-between cursor-pointer md:px-8 px-4 md:py-5 py-4;
-    }
+  .avail-faq-title {
+    @apply flex items-center justify-between cursor-pointer md:px-8 px-4 md:py-5 py-4;
+  }
 
-    .avail-faq-content {
-        @apply max-h-0 overflow-hidden transition-all duration-300;
-    }
+  .avail-faq-content {
+    @apply max-h-0 overflow-hidden transition-all duration-300;
+  }
 
-    .avail-faq-content.open {
-        @apply border-t border-primary;
-    }
+  .avail-faq-content.open {
+    @apply border-t border-primary;
+  }
 
-    .avail-faq-icon {
-        @apply text-secondary transition-transform duration-300;
-    }
+  .avail-faq-icon {
+    @apply text-secondary transition-transform duration-300;
+  }
 
-    .avail-faq-item.active .avail-faq-icon {
-        @apply rotate-180;
-    }
+  .avail-faq-item.active .avail-faq-icon {
+    @apply rotate-180;
+  }
+
+  .footer_title {
+    @apply text-xl font-semibold text-primary mb-5 relative pb-3;
+  }
+
+  .footer_title span {
+    @apply absolute left-0 bottom-0 w-14 h-0.5 bg-secondary;
+  }
+
+  .footer_link {
+    @apply text-[#D8D3CB] hover:text-secondary transition duration-300;
+  }
+
+  footer .menu li a {
+    @apply text-[#D8D3CB] hover:text-secondary transition duration-300;
+  }
+
+}
+
+@layer components {
+
+  .faq-item {
+    @apply border-b;
+    border-color: rgb(208 186 144 / 20%);
+  }
+
+  .faq-title {
+    @apply w-full flex justify-between items-center py-7 text-left text-white text-xl font-semibold transition-all duration-300 hover:text-primary;
+  }
+
+  .faq-icon {
+    @apply text-primary transition-all duration-300;
+  }
+
+  .faq-item.active .faq-icon {
+    @apply rotate-180 text-secondary;
+  }
+
+  .faq-content {
+    @apply overflow-hidden max-h-0 transition-all duration-300;
+  }
+
+  .faq-content.open {
+    @apply pb-7;
+  }
+
+  .faq-body {
+    @apply text-[#D6D1CB] leading-8 text-base max-w-3xl;
+  }
+
 }
 
 .slick-prev {

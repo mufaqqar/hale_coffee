@@ -1,245 +1,234 @@
-</div>
+<footer class="bg-[#F8F5EF] pt-16">
 
-<footer class="pt-14 bg-coff_black text-primary">
+    <div class="container mx-auto px-4">
 
-    <!-- Footer Links -->
-    <div
-        class="container mx-auto px-4 grid lg:grid-cols-5 md:grid-cols-2 grid-cols-1 gap-8 pb-10 border-b border-white/10">
+        <div class="grid lg:grid-cols-[1.4fr_1fr_1fr_1fr_1.2fr] md:grid-cols-2 grid-cols-1 gap-10">
 
-        <!-- Company -->
-        <div>
-            <h6 class="footer_title">
-                Company
-                <span></span>
-            </h6>
+            <!-- Left -->
+            <div>
 
-            <?php
-            wp_nav_menu(array(
-                'theme_location' => 'company',
-                'container' => false,
-                'menu_class' => 'flex flex-col gap-3',
-                'fallback_cb' => false,
-            ));
-            ?>
-        </div>
+                <a href="<?php echo home_url(); ?>">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png"
+                        alt="Logo"
+                        class="w-56 mb-8">
+                </a>
 
-        <!-- Innovation -->
-        <div>
-            <h6 class="footer_title">
-                Innovation
-                <span></span>
-            </h6>
+                <!-- Trustpilot -->
 
-            <?php
-            wp_nav_menu(array(
-                'theme_location' => 'innovation',
-                'container' => false,
-                'menu_class' => 'flex flex-col gap-3',
-                'fallback_cb' => false,
-            ));
-            ?>
-        </div>
+                <div class="mb-8">
 
-        <!-- Packaging -->
-        <div>
-            <h6 class="footer_title">
-                Packaging Products
-                <span></span>
-            </h6>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/trustpilot.png"
+                        alt="Trustpilot"
+                        class="mb-3">
 
-            <?php
-            wp_nav_menu(array(
-                'theme_location' => 'packaging',
-                'container' => false,
-                'menu_class' => 'flex flex-col gap-3',
-                'fallback_cb' => false,
-            ));
-            ?>
-        </div>
-
-        <!-- Services -->
-        <div>
-            <h6 class="footer_title">
-                Services
-                <span></span>
-            </h6>
-
-            <?php
-            wp_nav_menu(array(
-                'theme_location' => 'services',
-                'container' => false,
-                'menu_class' => 'flex flex-col gap-3',
-                'fallback_cb' => false,
-            ));
-            ?>
-        </div>
-
-        <!-- Contact -->
-        <div>
-
-            <h6 class="footer_title">
-                Connect With Us
-                <span></span>
-            </h6>
-
-            <ul class="flex flex-col gap-3 text-[#D8D3CB]">
-
-                <li>
-                    Unit 229, 32A Birmingham Road,
-                    Bromsgrove B61 0DD
-                </li>
-
-                <li>
-                    <a href="tel:+4401213186768" class="footer_link">
-                        +44 01213186768
+                    <a href="#"
+                        class="text-secondary hover:text-coff_black underline transition">
+                        Leave a Review
                     </a>
-                </li>
 
-                <li>
-                    <a href="mailto:sales@halepathpackaging.co.uk" class="footer_link">
-                        sales@halepathpackaging.co.uk
+                </div>
+
+                <!-- Certificates -->
+
+                <div class="flex gap-4 items-center">
+
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brgs.png"
+                        alt=""
+                        class="h-12">
+
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/fsc.png"
+                        alt=""
+                        class="h-12">
+
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/fda.png"
+                        alt=""
+                        class="h-12">
+
+                </div>
+
+            </div>
+
+            <!-- Company -->
+
+            <div>
+
+                <h5 class="text-lg font-semibold text-coff_black mb-6">
+                    Custom Packaging
+                </h5>
+
+                <ul class="space-y-4">
+
+                    <li><a href="#" class="text-coff_black hover:text-secondary transition">Design Services</a></li>
+
+                    <li><a href="#" class="text-coff_black hover:text-secondary transition">Digital Printing</a></li>
+
+                    <li><a href="#" class="text-coff_black hover:text-secondary transition">Custom Printed Bags</a></li>
+
+                    <li><a href="#" class="text-coff_black hover:text-secondary transition">Coffee Bags</a></li>
+
+                    <li><a href="#" class="text-coff_black hover:text-secondary transition">Low MOQ</a></li>
+
+                    <li><a href="#" class="text-coff_black hover:text-secondary transition">Innovation</a></li>
+
+                </ul>
+
+            </div>
+
+            <!-- Products -->
+
+            <div>
+
+                <h5 class="text-lg font-semibold text-coff_black mb-6">
+                    Our Products
+                </h5>
+
+                <ul class="space-y-4">
+
+                    <li><a href="#" class="text-coff_black hover:text-secondary transition">Flat Bottom Bags</a></li>
+
+                    <li><a href="#" class="text-coff_black hover:text-secondary transition">Stand Up Pouches</a></li>
+
+                    <li><a href="#" class="text-coff_black hover:text-secondary transition">Side Gusset Bags</a></li>
+
+                    <li><a href="#" class="text-coff_black hover:text-secondary transition">Quad Seal Bags</a></li>
+
+                    <li><a href="#" class="text-coff_black hover:text-secondary transition">Drip Bags & Filters</a></li>
+
+                </ul>
+
+            </div>
+
+            <!-- Quote -->
+
+            <div>
+
+                <h5 class="text-lg font-semibold text-coff_black mb-6">
+                    Get a Quote
+                </h5>
+
+                <ul class="space-y-4">
+
+                    <li><a href="#" class="text-coff_black hover:text-secondary transition">Contact Us</a></li>
+
+                    <li><a href="#" class="text-coff_black hover:text-secondary transition">Order Samples</a></li>
+
+                    <li><a href="#" class="text-coff_black hover:text-secondary transition">Our Story</a></li>
+
+                    <li><a href="#" class="text-coff_black hover:text-secondary transition">Trade Shows</a></li>
+
+                    <li><a href="#" class="text-coff_black hover:text-secondary transition">FAQ</a></li>
+
+                    <li><a href="#" class="text-coff_black hover:text-secondary transition">How To Order</a></li>
+
+                </ul>
+
+            </div>
+
+            <!-- Right -->
+
+            <div>
+
+                <h5 class="text-lg font-semibold text-coff_black mb-6">
+                    Connect With Us
+                </h5>
+
+                <div class="flex gap-5 text-3xl mb-10">
+
+                    <a href="#" class="text-coff_black hover:text-secondary">
+                        <i class="fab fa-facebook-f"></i>
                     </a>
-                </li>
 
-            </ul>
+                    <a href="#" class="text-coff_black hover:text-secondary">
+                        <i class="fab fa-instagram"></i>
+                    </a>
 
-        </div>
+                    <a href="#" class="text-coff_black hover:text-secondary">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
 
-    </div>
+                    <a href="#" class="text-coff_black hover:text-secondary">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
 
-    <!-- Reviews -->
-    <div class="container mx-auto px-4 flex lg:flex-row flex-col justify-between gap-10 py-10 border-b border-white/10">
+                    <a href="#" class="text-coff_black hover:text-secondary">
+                        <i class="fab fa-youtube"></i>
+                    </a>
 
-        <div>
+                </div>
 
-            <h6 class="text-lg font-semibold text-primary mb-6">
-                Where We're Trusted
-            </h6>
+                <h5 class="text-lg font-semibold text-coff_black mb-5">
+                    Subscribe to our newsletter
+                </h5>
 
-            <div class="flex flex-wrap gap-5 items-center">
+                <form class="mb-6">
 
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/google-reviws.png"
-                    alt="Google Reviews">
+                    <button
+                        class="w-full bg-secondary hover:bg-primary hover:text-coff_black text-white py-4 rounded-full transition font-semibold">
 
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/trustpilot.png" alt="Trustpilot">
+                        Sign up
 
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bbb.png" alt="BBB">
+                    </button>
 
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/reviews-io.png" alt="Reviews.io">
+                </form>
+
+                <p class="text-sm text-coff_black mb-6">
+                    You can unsubscribe at any time.
+                </p>
+
+                <h6 class="text-sm font-semibold text-coff_black mb-4">
+                    Proud Gold Sponsor of the
+                </h6>
+
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/award.png"
+                    alt="Award"
+                    class="h-20">
 
             </div>
 
         </div>
 
-        <div>
+        <!-- Bottom -->
 
-            <h6 class="text-lg font-semibold text-primary mb-6">
-                Our Logistics Partners
-            </h6>
+        <div class="border-t border-primary mt-14 py-6">
 
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/fedex.png" alt="FedEx">
+            <div class="flex lg:flex-row flex-col justify-between items-center gap-5">
+
+                <p class="text-coff_black">
+                    Made by Hale Coffee
+                </p>
+
+                <div class="flex flex-wrap justify-center gap-7">
+
+                    <a href="#" class="text-coff_black hover:text-secondary transition">
+                        Cookies Policy
+                    </a>
+
+                    <a href="#" class="text-coff_black hover:text-secondary transition">
+                        Privacy Policy
+                    </a>
+
+                    <a href="#" class="text-coff_black hover:text-secondary transition">
+                        Shipping Policy
+                    </a>
+
+                    <a href="#" class="text-coff_black hover:text-secondary transition">
+                        Returns & Refunds
+                    </a>
+
+                    <a href="#" class="text-coff_black hover:text-secondary transition">
+                        Sitemap
+                    </a>
+
+                </div>
+
+                <p class="text-coff_black">
+                    © 2026 Hale Coffee
+                </p>
+
+            </div>
 
         </div>
 
     </div>
-
-    <!-- Bottom Footer -->
-    <div class="container mx-auto px-4 flex lg:flex-row flex-col justify-between items-center gap-8 py-8">
-
-        <div class="flex items-center gap-6 flex-wrap">
-
-            <a href="<?php echo home_url(); ?>">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="Logo" width="80">
-            </a>
-
-            <ul class="flex items-center gap-4">
-
-                <li>
-                    <a href="https://www.facebook.com/profile.php?id=61586916928562" target="_blank"
-                        class="text-primary hover:text-secondary transition text-xl">
-
-                        <i class="fab fa-facebook-f"></i>
-
-                    </a>
-                </li>
-
-                <li>
-
-                    <a href="https://www.instagram.com/halepathpackaging.uk?igsh=MW1tY3pyczV2emdzNw%3D%3D"
-                        target="_blank" class="text-primary hover:text-secondary transition text-xl">
-
-                        <i class="fab fa-instagram"></i>
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a href="https://www.tiktok.com/@halepathpackaging?_r=1&_t=ZS-957Rlv6JhMV" target="_blank"
-                        class="text-primary hover:text-secondary transition text-xl">
-
-                        <i class="fab fa-tiktok"></i>
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a href="#" class="text-primary hover:text-secondary transition text-xl">
-
-                        <i class="fab fa-whatsapp"></i>
-
-                    </a>
-
-                </li>
-
-            </ul>
-
-        </div>
-
-        <div class="text-[#B8B2AA] lg:text-right text-center text-sm leading-7">
-
-            <p>
-                © <?php echo date('Y'); ?> Hale Path Packaging. All Rights Reserved.
-            </p>
-
-            <p>
-
-                <a href="<?php echo site_url('/privacy-policy'); ?>" class="hover:text-secondary transition">
-
-                    Privacy Policy
-
-                </a>
-
-                |
-
-                <a href="<?php echo site_url('/terms-conditions'); ?>" class="hover:text-secondary transition">
-
-                    Terms & Conditions
-
-                </a>
-
-            </p>
-
-        </div>
-
-    </div>
-
-    <!-- Scroll Top -->
-
-    <button id="scrollToTopBtn"
-        class="fixed bottom-6 right-6 bg-secondary hover:bg-primary text-white p-3 rounded-full shadow-xl hidden transition-all duration-300">
-
-        <i class="fa-solid fa-arrow-up"></i>
-
-    </button>
 
 </footer>
-</div>
-
-<?php wp_footer(); ?>
-</body>
-
-</html>

@@ -16,6 +16,10 @@ jQuery(function ($) {
         $('#' + tab)
             .removeClass('hidden');
 
+        if (typeof window.HaleSliders !== 'undefined') {
+            window.HaleSliders.refresh('#' + tab);
+        }
+
     });
 
 });

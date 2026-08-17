@@ -13,7 +13,7 @@ $featureproductsRes = [
                     We push for high standards across customisation, design, service, technology, and materials. We don’t aim for “good enough.” We aim for solid results. That approach allows us to offer wide options in textures, materials, designs, and innovative outlooks.',
         'slug' => ['current' => 'eco-packaging'],
         'gallery' => [
-            ['asset' => ['url' => get_template_directory_uri() . '/assets/images/design/1.png']]
+            ['asset' => ['url' => get_template_directory_uri() . '/assets/images/packaging-partner.jpg']]
         ],
     ],
     [
@@ -25,7 +25,7 @@ $featureproductsRes = [
                     Our production, creative design, and customer service teams operate within a modern facility equipped with advanced technology. The result? High-quality packaging delivered at reasonable prices.',
         'slug' => ['current' => 'custom-boxes'],
         'gallery' => [
-            ['asset' => ['url' => get_template_directory_uri() . '/assets/images/design/2.png']]
+            ['asset' => ['url' => get_template_directory_uri() . '/assets/images/packaging-partner.jpg']]
         ],
     ],
     [
@@ -36,7 +36,7 @@ $featureproductsRes = [
                     The goal is simple: packaging that looks correct, feels consistent, and represents the brand clearly.',
         'slug' => ['current' => 'luxury-packaging'],
         'gallery' => [
-            ['asset' => ['url' => get_template_directory_uri() . '/assets/images/design/3.png']]
+            ['asset' => ['url' => get_template_directory_uri() . '/assets/images/packaging-partner.jpg']]
         ],
     ],
     [
@@ -46,7 +46,7 @@ $featureproductsRes = [
                     Our skilled team carefully manages colour control, die-cutting plates, and lamination processes. Experience and technology work together to maintain steady output without compromising standards.',
         'slug' => ['current' => 'retail-packs'],
         'gallery' => [
-            ['asset' => ['url' => get_template_directory_uri() . '/assets/images/design/4.png']]
+            ['asset' => ['url' => get_template_directory_uri() . '/assets/images/packaging-partner.jpg']]
         ],
     ],
     [
@@ -57,7 +57,7 @@ $featureproductsRes = [
                     In simple terms, we handle the packaging supply so you can focus on running your business.',
         'slug' => ['current' => 'retail-packs'],
         'gallery' => [
-            ['asset' => ['url' => get_template_directory_uri() . '/assets/images/design/5.png']]
+            ['asset' => ['url' => get_template_directory_uri() . '/assets/images/packaging-partner.jpg']]
         ],
     ],
 ];
@@ -75,7 +75,7 @@ $featureproductsRes = [
     <div class="container mx-auto px-4 md:flex items-center gap-5 md:gap-10 flex-row">
         <figure class="md:w-1/2">
             <img alt="Why Us Image"
-                src="<?php echo get_template_directory_uri(); ?>/assets/images/about-page/slider.png"
+                src="<?php echo get_template_directory_uri(); ?>/assets/images/packaging-partner.jpg"
                 class="rounded-2xl">
         </figure>
         <div class="flex md:w-1/2 justify-center md:justify-start items-center md:items-start flex-col">
@@ -104,7 +104,7 @@ $featureproductsRes = [
     <div class="container mx-auto px-4 md:flex items-center gap-5 md:gap-10 flex-row-reverse">
         <figure class="md:w-1/2">
             <img alt="Why Us Image"
-                src="<?php echo get_template_directory_uri(); ?>/assets/images/about-page/slider.png"
+                src="<?php echo get_template_directory_uri(); ?>/assets/images/packaging-partner.jpg"
                 class="rounded-2xl">
         </figure>
         <div class="flex md:w-1/2 justify-center md:justify-start items-center md:items-start flex-col">

@@ -8,14 +8,14 @@ get_header();
     <section
         class="py-16 sm:h-[350px] h-[260px] flex items-center justify-center bg-cover bg-no-repeat bg-center bg-black/50 bg-blend-overlay"
         style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/about-page/s2.webp'">
-        <div class="hale_container">
+        <div class="container mx-auto px-4">
             <h1 class="text-white font-bold text-3xl md:text-5xl lg:text-[51px]">
                 <?php the_title(); ?>
             </h1>
         </div>
     </section>
 
-    <div class="hale_container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <div class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
         <?php
     $query_args = [

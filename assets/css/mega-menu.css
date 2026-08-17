@@ -1,11 +1,11 @@
 /* ============================================
    Normal Dropdown Menu
    ============================================ */
-.primary-navigation .menu > .menu-item {
+.primary-navigation .menu>.menu-item {
     position: relative;
 }
 
-.primary-navigation .menu > .menu-item > .sub-menu {
+.primary-navigation .menu>.menu-item>.sub-menu {
     position: absolute;
     top: 100%;
     left: 0;
@@ -21,8 +21,8 @@
     border-radius: 0 0 6px 6px;
 }
 
-.primary-navigation .menu > .menu-item:hover > .sub-menu,
-.primary-navigation .menu > .menu-item > .sub-menu:hover {
+.primary-navigation .menu>.menu-item:hover>.sub-menu,
+.primary-navigation .menu>.menu-item>.sub-menu:hover {
     opacity: 1;
     visibility: visible;
 }
@@ -49,7 +49,7 @@
     position: static;
 }
 
-.primary-navigation .menu-item-mega > .mega-sub-menu {
+.primary-navigation .menu-item-mega>.mega-sub-menu {
     position: absolute;
     top: 100%;
     left: 0;
@@ -68,8 +68,8 @@
     gap: 1.5rem;
 }
 
-.primary-navigation .menu-item-mega:hover > .mega-sub-menu,
-.primary-navigation .menu-item-mega > .mega-sub-menu:hover {
+.primary-navigation .menu-item-mega:hover>.mega-sub-menu,
+.primary-navigation .menu-item-mega>.mega-sub-menu:hover {
     opacity: 1;
     visibility: visible;
 }
@@ -115,12 +115,12 @@
         padding: 1rem 0;
     }
 
-    .primary-navigation .menu > .menu-item {
+    .primary-navigation .menu>.menu-item {
         position: relative;
         width: 100%;
     }
 
-    .primary-navigation .menu > .menu-item > a {
+    .primary-navigation .menu>.menu-item>a {
         display: block;
         padding: 0.75rem 1.5rem;
         color: #fff;

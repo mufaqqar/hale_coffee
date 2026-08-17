@@ -62,46 +62,17 @@ $featureproductsRes = [
     ],
 ];
 ?>
-<style>
-    input[type="range"]#baslider {
-        -webkit-appearance: none;
-        appearance: none;
-        background: transparent;
-        width: calc(100% + 30px);
-        left: -14px;
-    }
-
-    /* Chrome / Safari */
-    input[type="range"]#baslider::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        appearance: none;
-        width: 30px;
-        height: 30px;
-        background: #d3dbca;
-        border-radius: 50%;
-        cursor: pointer;
-    }
-
-    /* Firefox */
-    input[type="range"]#baslider::-moz-range-thumb {
-        width: 30px;
-        height: 30px;
-        background: #d3dbca;
-        border-radius: 50%;
-        cursor: pointer;
-    }
-</style>
 <section
-		class="py-16 sm:h-[350px] h-[260px] flex items-center justify-center bg-cover bg-no-repeat bg-center bg-black/50 bg-blend-overlay"
-		style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/about-page/s2.webp'">
-		<div class="hale_container">
-			<h1 class="text-white font-bold text-3xl md:text-5xl lg:text-[51px]">
-				<?php the_title(); ?>
-			</h1>
-		</div>
-	</section>
+    class="py-16 sm:h-[350px] h-[260px] flex items-center justify-center bg-cover bg-no-repeat bg-center bg-black/50 bg-blend-overlay"
+    style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/faq-bg.jpg'">
+    <div class="container mx-auto px-4">
+        <h1 class="text-white font-bold text-3xl md:text-5xl lg:text-[51px]">
+            <?php the_title(); ?>
+        </h1>
+    </div>
+</section>
 <section class="my-16">
-    <div class="hale_container md:flex items-center gap-5 md:gap-10 flex-row">
+    <div class="container mx-auto px-4 md:flex items-center gap-5 md:gap-10 flex-row">
         <figure class="md:w-1/2">
             <img alt="Why Us Image"
                 src="<?php echo get_template_directory_uri(); ?>/assets/images/about-page/slider.png"
@@ -130,7 +101,7 @@ $featureproductsRes = [
     </div>
 </section>
 <section class="my-16">
-    <div class="hale_container md:flex items-center gap-5 md:gap-10 flex-row-reverse">
+    <div class="container mx-auto px-4 md:flex items-center gap-5 md:gap-10 flex-row-reverse">
         <figure class="md:w-1/2">
             <img alt="Why Us Image"
                 src="<?php echo get_template_directory_uri(); ?>/assets/images/about-page/slider.png"
@@ -168,8 +139,8 @@ $featureproductsRes = [
     </div>
 </section>
 <section class="py-16">
-    <div class="hale_container">
-        <h2 class="h2 md:mb-5!">
+    <div class="container mx-auto px-4">
+        <h2 class="md:text-4xl text-2xl font-bold text-coff_black capitalize mt-1 text-center mb-4">
             The Work We Do And <span class="text-primary">Love Doing</span>
         </h2>
         <p class="md:text-xl text-base font-normal text-title_Clr text-center max-w-[880px] mx-auto">
@@ -181,7 +152,7 @@ $featureproductsRes = [
 
         </p>
     </div>
-    <div class="hale_container mt-10 flex flex-col gap-8 ">
+    <div class="container mx-auto px-4 mt-10 flex flex-col gap-8 ">
         <?php foreach ($featureproductsRes as $product): ?>
             <div class='feature_box flex md:flex-row flex-col items-center even:md:flex-row-reverse'>
                 <div class="md:w-1/3 w-full">
@@ -200,53 +171,5 @@ $featureproductsRes = [
         <?php endforeach; ?>
     </div>
 </section>
-<!-- <section class="overflow-hidden bg-[#e7d2b5]">
-    <div class="flex md:flex-row flex-col gap-8 items-center">
-        <div class="md:w-1/2 w-full py-16 sm:px-[70px] px-6">
-            <div class="md:w-[455px] mx-auto">
-                <p class="font-extrabold sm:text-4xl text-2xl text-center mb-8">
-                    CLINICALLY TESTED.
-                    VISIBLY PROVEN.
-                </p>
-                <p class="text-lg font-normal text-txt_Clr text-center mb-5">
-                    Clinically evaluated using standardized dermatological grading and image analysis, visible
-                    improvements
-                    in dark spots and overall tone evenness were observed in as little as 2 weeks. In a 6-week consumer
-                    perception study, 95% of participants agreed this was the best dark spot treatment they had used,
-                    with
-                    the majority reporting clearer, smoother, more even-looking skin over time.
-                </p>
-                <p class="text-base font-normal text-txt_Clr text-center">SEE HOW IT HELPED OTHERS:</p>
-            </div>
-        </div>
-        <div class="md:w-1/2 w-full pb-[717px] relative">
-            <div class="w-full h-full bg-cover absolute inset-0"
-                style="background-image:url('https://cdn.accentuate.io/9094396117245/16023346151577/BEFORE-1-v1767822912588.png')">
-                <div id="afterImage" class="md:w-1/2 w-full h-full bg-cover absolute inset-0"
-                    style="background-image:url('https://cdn.accentuate.io/9094396117245/16023346118809/AFTER-1-v1767822904409.png')">
-                </div>
-            </div>
-        
-            <div id="divider" class="absolute top-0 bottom-0 w-[1px] bg-white" style="left:50%">
-            </div>
-            <input id="baslider" type="range" min="0" max="100" value="50" class="absolute inset-0 cursor-pointer">
-        </div>
-    </div>
-</section> -->
-<script>
-    const baslider = document.getElementById("baslider");
-    const afterImage = document.getElementById("afterImage");
-    const divider = document.getElementById("divider");
-
-    baslider.addEventListener("input", function () {
-        const value = this.value;
-
-        afterImage.style.width = value + "%";
-        divider.style.left = value + "%";
-    });
-</script>
-
-
-
 
 <?php get_footer(); ?>

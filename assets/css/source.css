@@ -162,3 +162,16 @@
 .form_icon {
   @apply absolute right-4 top-1/2 text-xs text-gray-500 -translate-y-1/2;
 }
+
+
+.feature_box {
+  @apply w-full border border-secondary rounded-3xl overflow-hidden;
+}
+
+.feature_box h3 {
+  @apply lg:text-xl text-lg font-semibold text-coff_black mb-3;
+}
+
+.feature_box p {
+  @apply md:text-lg text-base font-normal text-coff_black;
+}

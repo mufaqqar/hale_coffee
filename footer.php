@@ -8,8 +8,7 @@
             <div>
 
                 <a href="<?php echo home_url(); ?>">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png"
-                        alt="Logo"
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="Logo"
                         class="w-56 mb-8">
                 </a>
 
@@ -17,12 +16,10 @@
 
                 <div class="mb-8">
 
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/trustpilot.png"
-                        alt="Trustpilot"
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/trustpilot.png" alt="Trustpilot"
                         class="mb-3">
 
-                    <a href="#"
-                        class="text-secondary hover:text-coff_black underline transition">
+                    <a href="#" class="text-secondary hover:text-coff_black underline transition">
                         Leave a Review
                     </a>
 
@@ -32,16 +29,13 @@
 
                 <div class="flex gap-4 items-center">
 
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brgs.png"
-                        alt=""
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brc-certified.webp" alt=""
                         class="h-12">
 
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/fsc.png"
-                        alt=""
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Institute-cyclos.webp" alt=""
                         class="h-12">
 
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/fda.png"
-                        alt=""
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/fda-certified.webp" alt=""
                         class="h-12">
 
                 </div>
@@ -179,9 +173,8 @@
                     Proud Gold Sponsor of the
                 </h6>
 
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/award.png"
-                    alt="Award"
-                    class="h-20">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/global-coffee-awards-logo_black.webp"
+                    alt="Award" class="h-20">
 
             </div>
 

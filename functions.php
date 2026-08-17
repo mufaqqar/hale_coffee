@@ -15,6 +15,15 @@ function hale_coffee_setup()
 }
 add_action('after_setup_theme', 'hale_coffee_setup');
 
+function hale_coffee_remove_site_title($parts)
+{
+    if (!is_front_page()) {
+        unset($parts['site']);
+    }
+    return $parts;
+}
+add_filter('document_title_parts', 'hale_coffee_remove_site_title');
+
 function hale_coffee_enqueue_assets()
 {
 

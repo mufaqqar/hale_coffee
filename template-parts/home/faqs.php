@@ -1,7 +1,7 @@
 <section class="py-20 bg-coff_black relative overflow-hidden">
 
     <!-- Background Overlay -->
-    <div class="absolute inset-0 opacity-50">
+    <div class="absolute inset-0 opacity-20">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/faq-bg.jpg"
             class="w-full h-full object-cover object-center" alt="">
     </div>
@@ -12,17 +12,17 @@
 
             <div class="text-center mb-14">
 
-                <h2 class="text-5xl font-bold text-primary mb-4">
+                <h2 class="text-5xl font-bold text-white mb-4">
                     FAQs
                 </h2>
 
-                <p class="text-[#ddd] text-lg">
+                <p class="text-white text-lg">
                     Don't see your question?
-                    <a href="#" class="text-secondary hover:text-primary transition">
+                    <a href="#" class="text-white transition">
                         Visit our FAQ page
                     </a>
                     or
-                    <a href="#" class="text-secondary hover:text-primary transition">
+                    <a href="#" class="text-white transition">
                         Contact us
                     </a>.
                 </p>

@@ -3,7 +3,7 @@
 
     var sliderConfigs = {
         '.brand-slider': {
-            slidesToShow: 7,
+            slidesToShow: 10,
             slidesToScroll: 1,
             autoplay: true,
             autoplaySpeed: 0,

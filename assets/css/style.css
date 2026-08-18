@@ -960,20 +960,16 @@ footer .menu li a:hover {
   height: 264px;
 }
 
+.h-\[360px\] {
+  height: 360px;
+}
+
 .h-\[520px\] {
   height: 520px;
 }
 
 .h-full {
   height: 100%;
-}
-
-.h-\[\] {
-  height: ;
-}
-
-.h-\[360px\] {
-  height: 360px;
 }
 
 .\!min-h-\[170px\] {
@@ -1375,29 +1371,25 @@ footer .menu li a:hover {
   background-color: var(--secondary);
 }
 
+.bg-transparent {
+  background-color: transparent;
+}
+
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-}
-
-.bg-white\/5 {
-  background-color: rgb(255 255 255 / 0.05);
 }
 
 .bg-white\/20 {
   background-color: rgb(255 255 255 / 0.2);
 }
 
-.bg-transparent {
-  background-color: transparent;
+.bg-white\/5 {
+  background-color: rgb(255 255 255 / 0.05);
 }
 
 .bg-\[linear-gradient\(135deg\2c _\#fbdce0_0\%\2c _\#eee6f2_50\%\2c _\#d9e4f7_100\%\)\] {
   background-image: linear-gradient(135deg, #fbdce0 0%, #eee6f2 50%, #d9e4f7 100%);
-}
-
-.bg-none {
-  background-image: none;
 }
 
 .bg-cover {
@@ -1881,9 +1873,9 @@ footer .menu li a:hover {
 }
 
 :root {
-  --primary: #d0ba90;
-  --secondary: #c1662e;
-  --coff_black: #16130f;
+  --primary: #F5F5DC;
+  --secondary: #6F4E37;
+  --coff_black: #0c0b09;
 }
 
 .slick-prev {

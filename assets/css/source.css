@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --primary: #d0ba90;
-  --secondary: #c1662e;
-  --coff_black: #16130f;
+  --primary: #F5F5DC;
+  --secondary: #6F4E37;
+  --coff_black: #0c0b09;
 }
 
 @layer components {

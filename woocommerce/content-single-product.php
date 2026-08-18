@@ -1,0 +1,125 @@
+<?php
+/**
+ * The template for displaying product content in the single-product.php template
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/content-single-product.php.
+ *
+ * HOWEVER, on occasion WooCommerce will need to update template files and you
+ * (the theme developer) will need to copy the new files to your theme to
+ * maintain compatibility. We try to do this as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped and
+ * the readme will list any important changes.
+ *
+ * @see     https://woocommerce.com/document/template-structure/
+ * @package WooCommerce\Templates
+ * @version 3.6.0
+ */
+
+defined('ABSPATH') || exit;
+
+global $product;
+
+/**
+ * Hook: woocommerce_before_single_product.
+ *
+ * @hooked woocommerce_output_all_notices - 10
+ */
+do_action('woocommerce_before_single_product');
+
+if (post_password_required()) {
+    echo get_the_password_form(); // WPCS: XSS ok.
+    return;
+}
+?>
+<div id="product-<?php the_ID(); ?>" <?php wc_product_class('', $product); ?>>
+
+    <?php
+    /**
+     * Hook: woocommerce_before_single_product_summary.
+     *
+     * @hooked woocommerce_show_product_sale_flash - 10
+     * @hooked woocommerce_show_product_images - 20
+     */
+    //	do_action( 'woocommerce_before_single_product_summary' );
+    ?>
+
+    <div class="summary entry-summary">
+        <?php
+        /**
+         * Hook: woocommerce_single_product_summary.
+         *
+         * @hooked woocommerce_template_single_title - 5
+         * @hooked woocommerce_template_single_rating - 10
+         * @hooked woocommerce_template_single_price - 10
+         * @hooked woocommerce_template_single_excerpt - 20
+         * @hooked woocommerce_template_single_add_to_cart - 30
+         * @hooked woocommerce_template_single_meta - 40
+         * @hooked woocommerce_template_single_sharing - 50
+         * @hooked WC_Structured_Data::generate_product_data() - 60
+         */
+        //	do_action( 'woocommerce_single_product_summary' );
+        ?>
+    </div>
+
+    <?php
+    /**
+     * Hook: woocommerce_after_single_product_summary.
+     *
+     * @hooked woocommerce_output_product_data_tabs - 10
+     * @hooked woocommerce_upsell_display - 15
+     * @hooked woocommerce_output_related_products - 20
+     */
+    //	do_action( 'woocommerce_after_single_product_summary' );
+    ?>
+</div>
+
+
+<?php
+/**
+ * Assumes:
+ * – You are on a WooCommerce category or product page
+ * – Product gallery + quote form are included as template parts
+ */
+
+// Category or Product context
+if (is_product_category()) {
+    $term = get_queried_object();
+    $title = $term->name;
+    $excerpt = $term->description;
+} elseif (is_product()) {
+    global $product;
+    $title = get_the_title();
+    $excerpt = get_the_excerpt();
+}
+?>
+
+
+<section class="pt-14">
+    <div class="hale_container flex md:flex-row flex-col gap-7">
+
+        <!-- LEFT CONTENT -->
+        <div class="md:w-1/2 w-full">
+            <!-- Product Gallery -->
+            <?php get_template_part('template-parts/woo/product', 'gallery'); ?>
+        </div>
+
+        <!-- RIGHT CONTENT -->
+        <div class="md:w-1/2 w-full">
+            <h1 class="md:text-[40px] md:leading-none text-3xl font-bold text-title_Clr">
+                <?php echo esc_html($title); ?>
+            </h1>
+
+            <div class="text-lg font-normal text-title_Clr mb-5">
+                <?php global $product;
+                if ($product->get_short_description()) {
+                    echo wpautop($product->get_short_description());
+                } ?>
+            </div>
+           
+            <?php get_template_part('template-parts/woo/product-form'); ?>
+        </div>
+    </div>
+</section>
+
+
+

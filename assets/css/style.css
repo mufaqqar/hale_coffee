@@ -622,7 +622,7 @@ video {
   overflow: hidden;
   border-radius: 0.75rem;
   border-width: 1px;
-  border-color: var(--primary);
+  border-color: var(--secondary);
 }
 
 .avail-faq-title {
@@ -655,7 +655,7 @@ video {
 
 .avail-faq-content.open {
   border-top-width: 1px;
-  border-color: var(--primary);
+  border-color: var(--secondary);
 }
 
 .avail-faq-icon {

@@ -5,7 +5,7 @@
         </h2>
         <div id="avail_faqs" class="pt-8">
             <div class="max-w-[1080px] mt-10 grid gap-5 md:grid-cols-1 grid-cols-1 mx-auto">
-                <div class="avail-faq-item active">
+                <div class="avail-faq-item active bg-[#F8F5F0]">
                     <h3 class="avail-faq-title">
                         <span class="text-lg font-semibold text-coff_black">
                             United Kingdom
@@ -60,7 +60,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="avail-faq-item">
+                <div class="avail-faq-item bg-[#F8F5F0]">
                     <h3 class="avail-faq-title">
                         <span class="text-lg font-semibold text-coff_black">
                             International

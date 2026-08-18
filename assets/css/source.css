@@ -26,7 +26,7 @@
 
 @layer components {
   .avail-faq-item {
-    @apply border border-primary rounded-xl overflow-hidden;
+    @apply border border-secondary rounded-xl overflow-hidden;
   }
 
   .avail-faq-title {
@@ -38,7 +38,7 @@
   }
 
   .avail-faq-content.open {
-    @apply border-t border-primary;
+    @apply border-t border-secondary;
   }
 
   .avail-faq-icon {

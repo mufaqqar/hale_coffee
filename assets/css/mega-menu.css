@@ -12,7 +12,6 @@
     background: #fff;
     color: #16130f;
     min-width: 220px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.2s ease, visibility 0.2s ease;
@@ -39,7 +38,7 @@
 
 .primary-navigation .sub-menu .menu-item a:hover {
     background: #f5f0eb;
-    color: #c1662e;
+    color: var(--secondary);
 }
 
 /* ============================================
@@ -92,7 +91,7 @@
 
 .primary-navigation .mega-sub-menu .menu-item a:hover {
     background: #f5f0eb;
-    color: #c1662e;
+    color: var(--secondary);
 }
 
 /* ============================================
@@ -104,7 +103,7 @@
         top: 100%;
         left: 0;
         right: 0;
-        background: #c1662e;
+        background: var(--secondary);
         z-index: 200;
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     }

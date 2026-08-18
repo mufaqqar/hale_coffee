@@ -1388,6 +1388,11 @@ footer .menu li a:hover {
   background-color: rgb(255 255 255 / 0.05);
 }
 
+.bg-\[\#ffe3aa\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 227 170 / var(--tw-bg-opacity, 1));
+}
+
 .bg-\[linear-gradient\(135deg\2c _\#fbdce0_0\%\2c _\#eee6f2_50\%\2c _\#d9e4f7_100\%\)\] {
   background-image: linear-gradient(135deg, #fbdce0 0%, #eee6f2 50%, #d9e4f7 100%);
 }

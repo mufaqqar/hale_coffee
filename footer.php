@@ -1,4 +1,4 @@
-<footer class="bg-coffGreen pt-16">
+<footer class="bg-secondary pt-16">
 
     <div class="container mx-auto px-4">
 

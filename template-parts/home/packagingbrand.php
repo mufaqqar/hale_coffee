@@ -1,10 +1,10 @@
-<section class="py-16 bg-[linear-gradient(135deg,_#fbdce0_0%,_#eee6f2_50%,_#d9e4f7_100%)]">
+<section class="py-16 bg-black">
     <div class="container mx-auto px-4">
         <div class="text-center mb-8">
-            <span class="text-secondary font-semibold text-base uppercase tracking-wider">
+            <span class=" font-semibold text-base uppercase tracking-wider text-white">
                 brands of all sizes
             </span>
-            <h2 class="md:text-4xl text-2xl font-bold text-coff_black capitalize mt-1">
+            <h2 class="md:text-4xl text-2xl font-bold text-white capitalize mt-1">
                 Custom packaging for brands of all sizes
             </h2>
         </div>

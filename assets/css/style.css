@@ -554,6 +554,36 @@ video {
   display: none;
 }
 
+@font-face {
+  font-family: "PoppinsBold";
+
+  src: url("../fonts/Poppins-Bold.ttf");
+}
+
+@font-face {
+  font-family: "PoppinsMedium";
+
+  src: url("../fonts/Poppins-Medium.ttf");
+}
+
+@font-face {
+  font-family: "PoppinsRegular";
+
+  src: url("../fonts/Poppins-Regular.ttf");
+}
+
+@font-face {
+  font-family: "EffraMedium";
+
+  src: url("../fonts/Effra_Trial_Rg.ttf");
+}
+
+@font-face {
+  font-family: "SourceSansProRegular";
+
+  src: url("../fonts/SourceSansPro-Regular.ttf");
+}
+
 .container {
   width: 100%;
 }
@@ -1169,12 +1199,6 @@ footer .menu li a:hover {
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
-.space-x-6 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(1.5rem * var(--tw-space-x-reverse));
-  margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
 .space-y-12 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(3rem * calc(1 - var(--tw-space-y-reverse)));
@@ -1340,10 +1364,6 @@ footer .menu li a:hover {
   background-color: rgb(0 0 0 / 0.5);
 }
 
-.bg-coffGreen {
-  background-color: var(--coffGreen);
-}
-
 .bg-coff_black {
   background-color: var(--coff_black);
 }
@@ -1383,6 +1403,11 @@ footer .menu li a:hover {
   background-color: rgb(255 255 255 / 0.05);
 }
 
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
+}
+
 .bg-\[linear-gradient\(135deg\2c _\#fbdce0_0\%\2c _\#eee6f2_50\%\2c _\#d9e4f7_100\%\)\] {
   background-image: linear-gradient(135deg, #fbdce0 0%, #eee6f2 50%, #d9e4f7 100%);
 }
@@ -1407,10 +1432,6 @@ footer .menu li a:hover {
 .object-center {
   -o-object-position: center;
      object-position: center;
-}
-
-.p-0 {
-  padding: 0px;
 }
 
 .p-2 {
@@ -1870,6 +1891,32 @@ footer .menu li a:hover {
   --secondaryLight: #c1662c;
   --coffLightGreen: #2e4a3b;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.PoppinsBold {
+  font-family: "PoppinsBold", sans-serif;
+}
+
+a,
+.PoppinsMedium {
+  font-family: "PoppinsMedium", sans-serif;
+}
+
+p,
+li,
+span,
+.PoppinsRegular {
+  font-family: "PoppinsRegular", sans-serif;
+}
+
+/* =========================
+   FONTS
+========================= */
 
 .slick-prev {
   left: 25px !important;
@@ -2421,16 +2468,16 @@ footer .menu li a:hover {
     margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
+  .md\:p-0 {
+    padding: 0px;
+  }
+
   .md\:p-7 {
     padding: 1.75rem;
   }
 
   .md\:p-8 {
     padding: 2rem;
-  }
-
-  .md\:p-0 {
-    padding: 0px;
   }
 
   .md\:px-14 {

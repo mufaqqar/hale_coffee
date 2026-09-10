@@ -1,4 +1,4 @@
-<section class="py-20 bg-secondary overflow-hidden">
+<section class="py-20 bg-primary overflow-hidden">
     <div class="container mx-auto px-4">
 
         <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -6,13 +6,13 @@
             <!-- Left Content -->
             <div>
 
-                <span class="uppercase tracking-[4px] text-primary font-semibold text-sm">
+                <span class="uppercase tracking-[4px] text-secondaryLight font-semibold text-sm">
                     Premium Coffee Packaging
                 </span>
 
                 <h2 class="text-5xl font-bold text-white leading-tight mt-4">
                     100% Custom Packaging
-                    <span class="text-primary">
+                    <span class="text-secondaryLight">
                         Crafted Around
                     </span>
                     Your Brand
@@ -29,7 +29,7 @@
 
                     <div class="flex items-start gap-4">
 
-                        <div class="w-10 h-10 rounded-full bg-coff_black flex items-center justify-center flex-shrink-0">
+                        <div class="w-10 h-10 rounded-full bg-[#ccccccb3] flex items-center justify-center flex-shrink-0">
                             <i class="fa-solid fa-check text-white"></i>
                         </div>
 
@@ -49,7 +49,7 @@
 
                     <div class="flex items-start gap-4">
 
-                        <div class="w-10 h-10 rounded-full bg-coff_black flex items-center justify-center flex-shrink-0">
+                        <div class="w-10 h-10 rounded-full bg-[#ccccccb3] flex items-center justify-center flex-shrink-0">
                             <i class="fa-solid fa-check text-white"></i>
                         </div>
 
@@ -69,7 +69,7 @@
 
                     <div class="flex items-start gap-4">
 
-                        <div class="w-10 h-10 rounded-full bg-coff_black flex items-center justify-center flex-shrink-0">
+                        <div class="w-10 h-10 rounded-full bg-[#ccccccb3] flex items-center justify-center flex-shrink-0">
                             <i class="fa-solid fa-check text-white"></i>
                         </div>
 
@@ -92,7 +92,7 @@
                 <div class="mt-10">
 
                     <a href="#"
-                        class="inline-flex items-center gap-3 bg-coff_black hover:bg-primary hover:text-coff_black text-white font-semibold px-8 py-4 rounded-full transition-all duration-300">
+                        class="inline-flex items-center gap-3 bg-secondary hover:bg-secondaryLight  text-white font-semibold px-8 py-4 rounded-full transition-all duration-300">
 
                         Get Free Quote
 

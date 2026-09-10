@@ -14,8 +14,8 @@
                 </a>
             <?php endif; ?>
         </div>
-        <div class="md:w-1/2">
-            <form class="flex items-center gap-5 bg-white/20 border border-gray-100 w-full md:px-5 md:py-2 px-3 py-1.5">
+        <div class="md:w-1/2 ">
+            <form class="flex items-center gap-5 bg-white/70 border border-gray-300 w-full md:px-5 md:py-2 px-3 py-1.5 ">
                 <input placeholder="What can we help you find?" class="w-full outline-none text-base bg-transparent" />
                 <button>
                     <i class="fa-solid fa-search"></i>

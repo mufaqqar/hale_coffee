@@ -11,7 +11,7 @@
     <?php wp_body_open(); ?>
     <div id="page" class="min-h-screen flex flex-col">
         <?php get_template_part('template-parts/header/topbar'); ?>
-        <header id="masthead" class="bg-secondary text-white relative">
+        <header id="masthead" class="bg-primary text-white relative">
             <div class="container mx-auto px-4 py-4 flex items-center justify-between">
                 <div class="site-branding md:hidden inline-flex">
                     <?php if (has_custom_logo()): ?>

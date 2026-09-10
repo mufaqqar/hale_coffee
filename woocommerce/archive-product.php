@@ -21,17 +21,21 @@ get_header('shop');
 
 
 $term = get_queried_object();
-$category_id = get_queried_object()->term_id;
-$category = get_term($category_id, 'product_cat');
-$cat_info = get_field('category_info', 'product_cat_' . $category_id);
-$cat_faqs = get_field('faqs_sections', 'product_cat_' . $category_id);
+$category_id = isset($term->term_id) ? $term->term_id : 0;
+$category = $category_id ? get_term($category_id, 'product_cat') : null;
+
+$cat_info = (function_exists('get_field') && $category_id) ? get_field('category_info', 'product_cat_' . $category_id) : null;
+$cat_faqs = (function_exists('get_field') && $category_id) ? get_field('faqs_sections', 'product_cat_' . $category_id) : null;
 $product_extra_info = $cat_info;
-$product_info_box1_title = $product_extra_info['info_box']['title'];
-$product_info_box1_description = $product_extra_info['info_box']['description'];
-$product_info_box1_image = $product_extra_info['info_box']['image'];
-$product_info_box2_title = $product_extra_info['info_box2']['title'];
-$product_info_box2_description = $product_extra_info['info_box2']['description'];
-$product_info_box2_image = $product_extra_info['info_box2']['image'];
+$product_info_box1_title = isset($product_extra_info['info_box']['title']) ? $product_extra_info['info_box']['title'] : '';
+$product_info_box1_description = isset($product_extra_info['info_box']['description']) ? $product_extra_info['info_box']['description'] : '';
+$product_info_box1_image = isset($product_extra_info['info_box']['image']) ? $product_extra_info['info_box']['image'] : '';
+$product_info_box2_title = isset($product_extra_info['info_box2']['title']) ? $product_extra_info['info_box2']['title'] : '';
+$product_info_box2_description = isset($product_extra_info['info_box2']['description']) ? $product_extra_info['info_box2']['description'] : '';
+$product_info_box2_image = isset($product_extra_info['info_box2']['image']) ? $product_extra_info['info_box2']['image'] : '';
+
+$category_name = $category && !is_wp_error($category) ? $category->name : '';
+$category_desc = $category && !is_wp_error($category) ? $category->description : '';
 
 ?>
 <?php
@@ -69,26 +73,26 @@ $thumbnail_id = get_term_meta($category_id, 'thumbnail_id', true);
 $image_url = $thumbnail_id ? wp_get_attachment_url($thumbnail_id) : '';
 
 // Check if any value exists
-if (!empty($image_url) || !empty($category->name) || !empty($category->description)):
+if (!empty($image_url) || !empty($category_name) || !empty($category_desc)):
   ?>
 <section class="py-10 lg:py-20">
     <div class="hale_container grid items-center md:grid-cols-2 gap-4 md:gap-8 lg:gap-10 xl:gap-[70px]">
         <div class="h-full">
             <?php if (!empty($image_url)): ?>
-            <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($category->name); ?>"
+            <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($category_name); ?>"
                 class="img-full rounded-[22px]">
             <?php endif; ?>
         </div>
         <div>
-            <?php if (!empty($category->name)): ?>
+            <?php if (!empty($category_name)): ?>
             <h1 class="font-bold text-3xl lg:text-5xl">
-                <?php echo esc_html($category->name); ?>
+                <?php echo esc_html($category_name); ?>
             </h1>
             <?php endif; ?>
 
-            <?php if (!empty($category->description)): ?>
+            <?php if (!empty($category_desc)): ?>
             <p class="xl:text-[19px] mt-4">
-                <?php echo $category->description; ?>
+                <?php echo esc_html($category_desc); ?>
             </p>
             <?php endif; ?>
             <div class="mt-8">
@@ -100,15 +104,15 @@ if (!empty($image_url) || !empty($category->name) || !empty($category->descripti
 <?php endif; ?>
 
 <?php
-$term_id = get_queried_object_id();
-if (have_rows('categories_videos', 'product_cat_' . $term_id)): ?>
+$term_id = $category_id;
+if (function_exists('have_rows') && have_rows('categories_videos', 'product_cat_' . $term_id)): ?>
 <section class="mt-20 max-w-[2200px] mx-auto px-3 lg:px-0">
     <h2 class="text-2xl text-center mb-8 sm:text-3xl md:text-5xl font-bold">
-        <?php echo esc_html($category->name); ?> Gallery
+        <?php echo esc_html($category_name); ?> Gallery
     </h2>
     <div class="relative w-full py-8">
         <div class="cat_gallery">
-            <?php while (have_rows('categories_videos', 'product_cat_' . $term_id)):
+            <?php while (function_exists('have_rows') && have_rows('categories_videos', 'product_cat_' . $term_id)):
           the_row();
           $video_link = get_sub_field('video_link');
           if ($video_link): ?>
@@ -139,7 +143,7 @@ if (have_rows('categories_videos', 'product_cat_' . $term_id)): ?>
 
 <section class="mt-20 hale_container">
     <div>
-        <h2 class="font-extrabold text-4xl text-center">Explore <?php echo esc_html($category->name); ?></h2>
+        <h2 class="font-extrabold text-4xl text-center">Explore <?php echo esc_html($category_name); ?></h2>
     </div>
     <?php
   /**
@@ -239,7 +243,7 @@ if (have_rows('categories_videos', 'product_cat_' . $term_id)): ?>
 
             <?php if (!empty($product_info_box1_description)): ?>
             <p class="mb-7 text-center md:text-left">
-                <?php echo ($product_info_box1_description); ?>
+                <?php echo esc_html($product_info_box1_description); ?>
             </p>
             <?php endif; ?>
 
@@ -268,7 +272,7 @@ if (have_rows('categories_videos', 'product_cat_' . $term_id)): ?>
             <?php endif; ?>
             <?php if (!empty($product_info_box2_description)): ?>
             <p class="mb-7 text-center md:text-left">
-                <?php echo ($product_info_box2_description); ?>
+                <?php echo esc_html($product_info_box2_description); ?>
             </p>
             <?php endif; ?>
             <a class="py-[9px] px-[41px] text-white bg-[#1C2E42] rounded-md" href="/get-quote-now">

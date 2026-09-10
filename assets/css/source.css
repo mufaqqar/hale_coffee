@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+.hale_container {
+  @apply max-w-[1320px] mx-auto px-4;
+}
+
+.cat_gallery {
+  @apply flex overflow-hidden;
+}
+
+.cat_gallery .slick-track {
+  @apply flex items-stretch;
+}
+
 :root {
   --primary: #1b1600;
   --secondary: #9e4623;

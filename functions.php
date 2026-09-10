@@ -7,6 +7,20 @@ function hale_coffee_setup()
     add_theme_support('html5', ['search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'style', 'script']);
     add_theme_support('responsive-embeds');
     add_theme_support('custom-logo');
+    add_theme_support('woocommerce', [
+        'thumbnail_image_width' => 400,
+        'single_image_width'    => 400,
+        'product_grid'          => [
+            'default_rows'    => 3,
+            'min_rows'        => 1,
+            'default_columns' => 4,
+            'min_columns'     => 1,
+            'max_columns'     => 4,
+        ],
+    ]);
+    add_theme_support('wc-product-gallery-zoom');
+    add_theme_support('wc-product-gallery-lightbox');
+    add_theme_support('wc-product-gallery-slider');
 
     register_nav_menus([
         'primary' => __('Primary Menu', 'hale-coffee'),

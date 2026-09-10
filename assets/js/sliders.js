@@ -44,6 +44,26 @@
                 { breakpoint: 480, settings: { slidesToShow: 2 } }
             ]
         },
+        '.cat_gallery': {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: false,
+            autoplaySpeed: 0,
+            speed: 600,
+            cssEase: 'linear',
+            infinite: true,
+            arrows: false,
+            dots: false,
+            pauseOnHover: true,
+            pauseOnFocus: false,
+            draggable: true,
+            swipe: true,
+            responsive: [
+                { breakpoint: 1280, settings: { slidesToShow: 3 } },
+                { breakpoint: 1024, settings: { slidesToShow: 2 } },
+                { breakpoint: 640, settings: { slidesToShow: 1 } }
+            ]
+        },
         '.noissue': {
             slidesToShow: 4,
             slidesToScroll: 1,
@@ -179,6 +199,21 @@
             setTimeout(function () {
                 window.HaleSliders.refresh('#' + tab);
             }, 0);
+        }
+    });
+
+    // Category gallery prev/next navigation
+    $(document).on('click', '.cat-prev', function () {
+        var $gallery = $(this).closest('.relative').find('.cat_gallery');
+        if ($gallery.length && $gallery.hasClass('slick-initialized')) {
+            $gallery.slick('slickPrev');
+        }
+    });
+
+    $(document).on('click', '.cat-next', function () {
+        var $gallery = $(this).closest('.relative').find('.cat_gallery');
+        if ($gallery.length && $gallery.hasClass('slick-initialized')) {
+            $gallery.slick('slickNext');
         }
     });
 })(jQuery);

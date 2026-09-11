@@ -291,4 +291,7 @@ if (have_rows('categories_videos', 'product_cat_' . $term_id)): ?>
   ); ?>
 <?php endif; ?>
 <?php get_template_part('template-parts/woo/pro-reviews'); ?>
+<?php get_template_part('template-parts/home/faqs'); ?>
+<?php get_template_part('template-parts/home/available'); ?>
+<?php get_template_part('template-parts/home/customerstory'); ?>
 <?php get_footer('shop'); ?>

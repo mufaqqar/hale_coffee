@@ -9,13 +9,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: 'var(--primary)',
-        secondary: 'var(--secondary)',
-        coff_black: 'var(--coff_black)',
-        coffLightGreen: 'var(--coffLightGreen)',
-        coffGreen: 'var(--coffGreen)',
-        secondaryLight: 'var(--secondaryLight)',
-        coffLightGreen: 'var(--coffLightGreen)',
+        primary: '#1b1600',
+        secondary: '#9e4623',
+        coff_black: '#000000',
+        coffLightGreen: '#2e4a3b',
+        coffGreen: '#284133',
+        secondaryLight: '#c1662c',
+        title_Clr: '#1b1600',
       },
     },
   },

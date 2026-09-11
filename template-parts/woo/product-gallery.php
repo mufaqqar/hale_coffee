@@ -1,75 +1,88 @@
 <?php
-defined('ABSPATH') || exit;
+/**
+ * WooCommerce Product Gallery
+ */
+
+if (!is_product())
+    return;
 
 global $product;
 
-if (empty($product)) {
-    return;
+$attachment_ids = $product->get_gallery_image_ids();
+$main_image_id = $product->get_image_id();
+
+// Include featured image first
+$images = [];
+
+if ($main_image_id) {
+    array_unshift($attachment_ids, $main_image_id);
 }
 
-$main_image_id = $product->get_image_id();
-$gallery_ids   = $product->get_gallery_image_ids();
-$all_images    = array_merge([$main_image_id], $gallery_ids);
-$all_images    = array_filter($all_images);
+foreach ($attachment_ids as $id) {
+    $images[] = [
+        'full'  => wp_get_attachment_image_url($id, 'hale_product'),
+        'thumb' => wp_get_attachment_image_url($id, 'hale_product_thumbs'),
+        'alt'   => get_post_meta($id, '_wp_attachment_image_alt', true),
+    ];
+}
+
+if (empty($images))
+    return;
 ?>
 
-<div class="product-gallery">
-    <!-- Main Image -->
-    <div class="main-image mb-4 rounded-2xl overflow-hidden">
-        <?php if ($main_image_id) : ?>
-            <img id="main-product-image"
-                 src="<?php echo esc_url(wp_get_attachment_image_url($main_image_id, 'woocommerce_single')); ?>"
-                 alt="<?php echo esc_attr($product->get_name()); ?>"
-                 class="w-full h-auto rounded-2xl cursor-zoom-in"
-                 data-zoom-image="<?php echo esc_url(wp_get_attachment_image_url($main_image_id, 'full')); ?>" />
-        <?php else : ?>
-            <img src="<?php echo wc_placeholder_img_src('woocommerce_single'); ?>"
-                 alt="<?php echo esc_attr($product->get_name()); ?>"
-                 class="w-full h-auto rounded-2xl" />
-        <?php endif; ?>
-    </div>
+<div class="content single">
+    <div class="container">
 
-    <!-- Thumbnails -->
-    <?php if (count($all_images) > 1) : ?>
-        <div class="product-thumbnails flex gap-3 overflow-x-auto pb-2">
-            <?php foreach ($all_images as $index => $image_id) :
-                $thumb_url = wp_get_attachment_image_url($image_id, 'woocommerce_thumbnail');
-                $full_url  = wp_get_attachment_image_url($image_id, 'woocommerce_single');
-                $zoom_url  = wp_get_attachment_image_url($image_id, 'full');
-            ?>
-                <button type="button"
-                        class="thumb-btn flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 <?php echo $index === 0 ? 'border-secondary' : 'border-transparent'; ?> hover:border-secondary transition"
-                        data-image="<?php echo esc_url($full_url); ?>"
-                        data-zoom="<?php echo esc_url($zoom_url); ?>">
-                    <img src="<?php echo esc_url($thumb_url); ?>"
-                         alt="<?php echo esc_attr($product->get_name() . ' - ' . ($index + 1)); ?>"
-                         class="w-full h-full object-cover" />
-                </button>
+        <!-- MAIN SLIDER -->
+        <div class="product-slider">
+            <?php foreach ($images as $index => $img): ?>
+            <div class="w-full h-full object-contain rounded-[12px]">
+                <img src="<?php echo esc_url($img['full']); ?>" alt="<?php echo esc_attr($img['alt']); ?>"
+                    class="w-full h-full object-cover rounded-[12px] max-h-[605px]" loading="lazy">
+            </div>
             <?php endforeach; ?>
         </div>
-    <?php endif; ?>
+
+        <!-- THUMBNAILS -->
+        <div class="thumb-wrapper product-thumbs singleproducts">
+            <?php foreach ($images as $index => $img): ?>
+            <div class="group !h-[150px] min-w-[150px] m-1.5 rounded-[10px] ">
+                <img src="<?php echo esc_url($img['thumb']); ?>" alt="<?php echo esc_attr($img['alt']); ?>"
+                    class="w-full group-hover:scale-105 rounded-[10px] transition-all duration-100 ease-linear object-cover"
+                    loading="lazy">
+            </div>
+            <?php endforeach; ?>
+        </div>
+
+    </div>
 </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    var mainImage = document.getElementById('main-product-image');
-    var thumbs = document.querySelectorAll('.thumb-btn');
+<?php get_template_part('template-parts/woo/product-trust'); ?>
 
-    thumbs.forEach(function(thumb) {
-        thumb.addEventListener('click', function() {
-            if (mainImage) {
-                mainImage.src = this.dataset.image;
-                if (this.dataset.zoom) {
-                    mainImage.setAttribute('data-zoom-image', this.dataset.zoom);
-                }
-            }
-            thumbs.forEach(function(t) {
-                t.classList.remove('border-secondary');
-                t.classList.add('border-transparent');
-            });
-            this.classList.remove('border-transparent');
-            this.classList.add('border-secondary');
-        });
+<script>
+jQuery(document).ready(function($) {
+
+    $('.product-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        loop: true,
+        infinite: true,
+        speed: 500,
+        asNavFor: '.product-thumbs',
+        lazyLoad: 'ondemand'
     });
+
+    $('.product-thumbs').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        loop: true,
+        asNavFor: '.product-slider',
+        focusOnSelect: true,
+        arrows: false,
+        infinite: true,
+        variableWidth: true
+    });
+
 });
 </script>

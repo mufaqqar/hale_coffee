@@ -1,167 +1,153 @@
-<?php
-defined('ABSPATH') || exit;
+<?php get_template_part('template-parts/woo/product-brand_slider'); ?>
+<section class="mt-20 max-w-[2200px] mx-auto px-3 lg:px-0">
+    <h2 class="text-2xl text-center mb-8 sm:text-3xl md:text-5xl font-bold">
+        <?php the_title(); ?> Gallery
+    </h2>
 
-global $product;
+    <?php
+    $product_gallery = get_field('product_gallery');
 
-if (empty($product)) {
-    return;
-}
+    if (empty($product_gallery)) {
+        return;
+    }
+    ?>
 
-$product_id     = $product->get_id();
-$product_title  = $product->get_name();
-$description    = $product->get_description();
-$short_desc     = $product->get_short_description();
-$sku            = $product->get_sku();
-$weight         = $product->get_weight();
-$dimensions     = $product->get_dimensions(false);
-$cat_ids        = $product->get_category_ids();
-$tag_ids        = $product->get_tag_ids();
-$attributes     = $product->get_attributes();
-$average_rating = $product->get_average_rating();
-$review_count   = $product->get_review_count();
-$stock_status   = $product->get_stock_status();
-$price_html     = $product->get_price_html();
-?>
-
-<section class="py-14">
-    <div class="hale_container">
-        <div class="grid md:grid-cols-2 gap-10">
-            <!-- Product Details -->
-            <div>
-                <h2 class="text-3xl font-bold text-coff_black mb-4"><?php echo esc_html($product_title); ?></h2>
-
-                <?php if ($average_rating > 0) : ?>
-                    <div class="flex items-center gap-2 mb-4">
-                        <div class="flex text-yellow-400">
-                            <?php for ($i = 1; $i <= 5; $i++) : ?>
-                                <?php if ($i <= floor($average_rating)) : ?>
-                                    <i class="fas fa-star"></i>
-                                <?php elseif ($i - $average_rating < 1) : ?>
-                                    <i class="fas fa-star-half-alt"></i>
-                                <?php else : ?>
-                                    <i class="far fa-star"></i>
-                                <?php endif; ?>
-                            <?php endfor; ?>
-                        </div>
-                        <span class="text-sm text-gray-500">(<?php echo esc_html($review_count); ?> reviews)</span>
-                    </div>
-                <?php endif; ?>
-
-                <?php if ($price_html) : ?>
-                    <div class="text-2xl font-bold text-secondary mb-4"><?php echo $price_html; ?></div>
-                <?php endif; ?>
-
-                <?php if ($short_desc) : ?>
-                    <div class="text-gray-600 mb-6"><?php echo wpautop($short_desc); ?></div>
-                <?php endif; ?>
-
-                <?php if ($description) : ?>
-                    <div class="text-gray-600 mb-6"><?php echo wpautop($description); ?></div>
-                <?php endif; ?>
+    <div class="relative w-full py-8">
+        <div class="full_gallery">
+            <?php foreach ($product_gallery as $index => $image): ?>
+            <div class="px-2">
+                <figure class="rounded-2xl h-[450px]">
+                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>"
+                        data-index="<?php echo $index; ?>"
+                        class="gallery-img cursor-pointer !h-full w-full object-cover rounded-2xl">
+                </figure>
             </div>
+            <?php endforeach; ?>
 
-            <!-- Product Meta -->
-            <div class="bg-gray-50 rounded-2xl p-6">
-                <h3 class="text-xl font-bold text-coff_black mb-4">Product Information</h3>
 
-                <table class="w-full text-sm">
-                    <tbody>
-                        <?php if ($sku) : ?>
-                            <tr class="border-b border-gray-200">
-                                <td class="py-2.5 font-medium text-gray-700">SKU</td>
-                                <td class="py-2.5 text-gray-600"><?php echo esc_html($sku); ?></td>
-                            </tr>
-                        <?php endif; ?>
+        </div>
+        <!-- Arrows -->
+        <button
+            class="gallery-prev text-white text-2xl leading-[0] h-[60px] w-[60px] rounded-full bg-primary hover:bg-secondary flex items-center justify-center cursor-pointer scale-100 hover:scale-110 transition-all ease-in-out absolute left-5 top-1/2 -translate-y-1/2 z-50"><i
+                class="fa-solid fa-arrow-left-long"></i></button>
+        <button
+            class="gallery-next text-white text-2xl leading-[0] h-[60px] w-[60px] rounded-full bg-primary hover:bg-secondary flex items-center justify-center cursor-pointer scale-100 hover:scale-110 transition-all ease-in-out absolute right-5 top-1/2 -translate-y-1/2 z-50"><i
+                class="fa-solid fa-arrow-right-long"></i></button>
+    </div>
+    <!-- Lightbox -->
+    <div id="lightbox" class="fixed inset-0 bg-black/90 hidden items-center justify-center z-[9999]">
+        <button id="lightbox-close" class="absolute top-5 right-5 text-white text-3xl">&times;</button>
+        <button id="lightbox-prev" class="absolute left-5 text-white text-3xl">&#10094;</button>
+        <img id="lightbox-img" class="max-h-[90%] max-w-[90%] object-contain rounded-xl" />
+        <button id="lightbox-next" class="absolute right-5 text-white text-3xl">&#10095;</button>
+    </div>
+    <script>
+    jQuery(document).ready(function($) {
+        $('.full_gallery').slick({
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            arrows: true,
+            prevArrow: $('.gallery-prev'),
+            nextArrow: $('.gallery-next'),
+            dots: false,
+            infinite: true,
+            adaptiveHeight: false,
+            responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+    });
 
-                        <?php if ($weight) : ?>
-                            <tr class="border-b border-gray-200">
-                                <td class="py-2.5 font-medium text-gray-700">Weight</td>
-                                <td class="py-2.5 text-gray-600"><?php echo esc_html($weight); ?> <?php echo get_option('woocommerce_weight_unit'); ?></td>
-                            </tr>
-                        <?php endif; ?>
+    jQuery(document).ready(function($) {
 
-                        <?php if ($dimensions) : ?>
-                            <tr class="border-b border-gray-200">
-                                <td class="py-2.5 font-medium text-gray-700">Dimensions</td>
-                                <td class="py-2.5 text-gray-600"><?php echo esc_html($dimensions); ?></td>
-                            </tr>
-                        <?php endif; ?>
+        const images = $('.gallery-img');
+        let currentIndex = 0;
 
-                        <tr class="border-b border-gray-200">
-                            <td class="py-2.5 font-medium text-gray-700">Availability</td>
-                            <td class="py-2.5">
-                                <?php if ($stock_status === 'instock') : ?>
-                                    <span class="text-green-600 font-medium">In Stock</span>
-                                <?php elseif ($stock_status === 'outofstock') : ?>
-                                    <span class="text-red-500 font-medium">Out of Stock</span>
-                                <?php else : ?>
-                                    <span class="text-yellow-500 font-medium">On Backorder</span>
-                                <?php endif; ?>
-                            </td>
-                        </tr>
+        function showImage(index) {
+            const src = $(images[index]).attr('src');
+            $('#lightbox-img').attr('src', src);
+            currentIndex = index;
+        }
 
-                        <?php if (!empty($cat_ids)) : ?>
-                            <tr class="border-b border-gray-200">
-                                <td class="py-2.5 font-medium text-gray-700">Category</td>
-                                <td class="py-2.5 text-gray-600">
-                                    <?php foreach ($cat_ids as $index => $cat_id) :
-                                        $cat_name = get_the_title($cat_id);
-                                        $cat_link = get_permalink($cat_id);
-                                        if ($index > 0) echo ', ';
-                                    ?>
-                                        <a href="<?php echo esc_url($cat_link); ?>" class="hover:text-secondary transition">
-                                            <?php echo esc_html($cat_name); ?>
-                                        </a>
-                                    <?php endforeach; ?>
-                                </td>
-                            </tr>
-                        <?php endif; ?>
+        // Open Lightbox
+        images.on('click', function() {
+            currentIndex = parseInt($(this).data('index'));
+            showImage(currentIndex);
 
-                        <?php if (!empty($tag_ids)) : ?>
-                            <tr class="border-b border-gray-200">
-                                <td class="py-2.5 font-medium text-gray-700">Tags</td>
-                                <td class="py-2.5 text-gray-600">
-                                    <?php foreach ($tag_ids as $index => $tag_id) :
-                                        $tag_name = get_the_title($tag_id);
-                                        if ($index > 0) echo ', ';
-                                    ?>
-                                        <?php echo esc_html($tag_name); ?>
-                                    <?php endforeach; ?>
-                                </td>
-                            </tr>
-                        <?php endif; ?>
+            $('#lightbox')
+                .removeClass('hidden')
+                .addClass('flex');
+        });
 
-                        <?php if (!empty($attributes)) : ?>
-                            <?php foreach ($attributes as $attribute) :
-                                $name = wc_attribute_label($attribute->get_name());
-                                if ($attribute->is_taxonomy()) {
-                                    $terms = wp_get_post_terms($product_id, $attribute->get_name(), 'fields=names');
-                                    $value = implode(', ', $terms);
-                                } else {
-                                    $value = $attribute->get_options();
-                                    $value = is_array($value) ? implode(', ', $value) : $value;
-                                }
-                            ?>
-                                <tr class="border-b border-gray-200">
-                                    <td class="py-2.5 font-medium text-gray-700"><?php echo esc_html($name); ?></td>
-                                    <td class="py-2.5 text-gray-600"><?php echo esc_html($value); ?></td>
-                                </tr>
-                            <?php endforeach; ?>
-                        <?php endif; ?>
-                    </tbody>
-                </table>
+        // Close Lightbox
+        $('#lightbox-close').on('click', function() {
+            $('#lightbox')
+                .removeClass('flex')
+                .addClass('hidden');
+        });
 
-                <div class="mt-6 flex gap-3">
-                    <a href="/get-quote-now"
-                       class="flex-1 py-3 bg-[#1C2E42] text-white font-semibold rounded-lg text-center hover:bg-[#2a4260] transition">
-                        Get Custom Quote
-                    </a>
-                    <a href="<?php echo esc_url(get_permalink(wc_get_page_id('shop'))); ?>"
-                       class="flex-1 py-3 border-2 border-[#1C2E42] text-[#1C2E42] font-semibold rounded-lg text-center hover:bg-[#1C2E42] hover:text-white transition">
-                        Back to Shop
-                    </a>
-                </div>
-            </div>
+        // Previous Image
+        $('#lightbox-prev').on('click', function() {
+            currentIndex =
+                (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        });
+
+        // Next Image
+        $('#lightbox-next').on('click', function() {
+            currentIndex =
+                (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        });
+
+        // Close on background click
+        $('#lightbox').on('click', function(e) {
+            if (e.target === this) {
+                $(this)
+                    .removeClass('flex')
+                    .addClass('hidden');
+            }
+        });
+
+    });
+    </script>
+
+</section>
+<section id="product-tabs" class="mt-10">
+    <div id="tabs-header" class="hale_container !px-0 flex border-b border-gray-300 bg-white z-40">
+        <button class="tab-btn" data-tab="tab_details">Details</button>
+        <button class="tab-btn" data-tab="tab_available_options">Available Options</button>
+        <button class="tab-btn" data-tab="tab_order_process">Order Process</button>
+    </div>
+    <!-- Tabs Content -->
+    <div class="tab-content mt-6">
+        <div class="tab-panels " id="tab_details">
+            <?php get_template_part('template-parts/woo/pro-tab1'); ?>
+        </div>
+        <div class="tab-panels hidden " id="tab_available_options">
+            <?php get_template_part('template-parts/woo/pro-tab2'); ?>
+        </div>
+        <div class="tab-panels hidden" id="tab_order_process">
+            <?php get_template_part('template-parts/woo/pro-tab3'); ?>
         </div>
     </div>
 </section>
+<?php get_template_part('template-parts/woo/product-videos'); ?>
+
+<?php get_template_part('template-parts/woo/related-products'); ?>

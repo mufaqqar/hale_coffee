@@ -1,97 +1,98 @@
-<?php
-defined('ABSPATH') || exit;
-
-global $product;
-
-if (empty($product)) {
-    return;
-}
-
-$reviews_enabled = get_option('woocommerce_enable_reviews') === 'yes';
-
-if (!$reviews_enabled) {
-    return;
-}
-
-$product_id     = $product->get_id();
-$average_rating = $product->get_average_rating();
-$review_count   = $product->get_review_count();
-
-$reviews = get_comments([
-    'post_id' => $product_id,
-    'status'  => 'approve',
-    'type'    => 'review',
-    'number'  => 10,
-]);
-
-if (empty($reviews)) {
-    return;
-}
+<?php 
+$testimonials = new WP_Query([
+    'post_type' => 'testimonial',
+    'posts_per_page' => 3,
+    'post_status' => 'publish'
+]); 
 ?>
 
-<section class="py-14 bg-gray-50">
-    <div class="hale_container max-w-4xl">
-        <div class="text-center mb-8">
-            <h2 class="text-3xl font-bold text-coff_black">Customer Reviews</h2>
-            <div class="flex items-center justify-center gap-2 mt-3">
-                <div class="flex text-yellow-400">
-                    <?php for ($i = 1; $i <= 5; $i++) : ?>
-                        <?php if ($i <= floor($average_rating)) : ?>
-                            <i class="fas fa-star"></i>
-                        <?php elseif ($i - $average_rating < 1) : ?>
-                            <i class="fas fa-star-half-alt"></i>
-                        <?php else : ?>
-                            <i class="far fa-star"></i>
-                        <?php endif; ?>
-                    <?php endfor; ?>
-                </div>
-                <span class="text-sm text-gray-500">
-                    <?php echo esc_html(number_format($average_rating, 1)); ?> out of 5
-                    (<?php echo esc_html($review_count); ?> <?php echo $review_count === 1 ? 'review' : 'reviews'; ?>)
+
+
+
+
+<section class="py-16 bg-[#F8F5F0]">
+    <div class="container mx-auto px-4">
+
+        <div class="flex items-center justify-between mb-10">
+
+            <div>
+                <span class="text-secondary uppercase tracking-[4px] text-sm font-semibold">
+                    Loved by 500+ brands worldwide
                 </span>
+
+                <h2 class="text-4xl font-bold text-coff_black mt-2">
+                    Customer Stories
+                </h2>
             </div>
+
+            <a href="#"
+                class="border border-secondary text-secondary hover:bg-secondary hover:text-white transition-all duration-300 rounded-full px-7 py-3 font-medium">
+                View All Stories
+            </a>
+
         </div>
 
-        <div class="space-y-6">
-            <?php foreach ($reviews as $review) :
-                $rating   = (int) get_comment_meta($review->comment_ID, 'rating', true);
-                $author   = $review->comment_author;
-                $date     = get_comment_date('M j, Y', $review->comment_ID);
-                $content  = $review->comment_content;
-            ?>
-                <div class="bg-white rounded-lg p-6 shadow-sm">
-                    <div class="flex items-center justify-between mb-3">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary font-bold text-sm">
-                                <?php echo esc_html(mb_strtoupper(mb_substr($author, 0, 1))); ?>
-                            </div>
-                            <div>
-                                <p class="font-semibold text-coff_black"><?php echo esc_html($author); ?></p>
-                                <p class="text-xs text-gray-400"><?php echo esc_html($date); ?></p>
-                            </div>
-                        </div>
-                        <?php if ($rating > 0) : ?>
-                            <div class="flex text-yellow-400 text-sm">
-                                <?php for ($i = 1; $i <= 5; $i++) : ?>
-                                    <?php if ($i <= $rating) : ?>
-                                        <i class="fas fa-star"></i>
-                                    <?php else : ?>
-                                        <i class="far fa-star"></i>
-                                    <?php endif; ?>
-                                <?php endfor; ?>
-                            </div>
+        <div class="testi-slider">
+
+            <?php if ($testimonials->have_posts()): ?>
+            <?php while ($testimonials->have_posts()): 
+                        $testimonials->the_post();
+
+                        $customer_type = get_field('customer_type');
+                        $incentivized = get_field('incentivized');
+                        $address = get_field('address');
+                        $rating = get_field('rating') ?: 0; // fallback
+                    ?>
+
+            <article class="px-1.5">
+
+
+
+
+                <div class="group bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+
+                    <div class="overflow-hidden">
+                        <?php if (has_post_thumbnail()) : ?>
+                        <?php the_post_thumbnail('full', array(
+                            'class' => 'w-full h-60 object-cover group-hover:scale-110 transition duration-500',
+                            'alt' => get_the_title()
+                        )); ?>
+                        <?php else : ?>
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/about-page/qoute-icon.png'); ?>"
+                            class="w-full h-60 object-cover group-hover:scale-110 transition duration-500"
+                            alt="<?php esc_attr_e('Default Image', 'textdomain'); ?>">
                         <?php endif; ?>
                     </div>
-                    <p class="text-gray-600 leading-relaxed"><?php echo esc_html($content); ?></p>
+
+                    <div class="p-6">
+                        <ul class="flex gap-1 items-center text-sm">
+                            <?php for ($i = 1; $i <= 5; $i++): ?>
+                            <li class="text-[#FFAE00]"><i class="fa-solid fa-star"></i></li>
+                            <?php endfor; ?>
+                        </ul>
+
+
+                        <h3 class="text-lg font-semibold text-coff_black mb-3 group-hover:text-secondary transition">
+
+                            <?php the_title()?>
+
+                        </h3>
+
+                        <p class="text-gray-600 leading-7 mb-6">
+
+                            <?php the_content()?>
+                        </p>
+                    </div>
+
                 </div>
-            <?php endforeach; ?>
+            </article>
+            <?php endwhile; ?>
+            <?php wp_reset_postdata(); ?>
+            <?php endif; ?>
+
+
+
         </div>
 
-        <div class="text-center mt-8">
-            <a href="<?php echo esc_url(get_permalink($product_id)); ?>"
-               class="text-secondary font-medium hover:underline">
-                Write a Review &rarr;
-            </a>
-        </div>
     </div>
 </section>

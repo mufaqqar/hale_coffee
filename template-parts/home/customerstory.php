@@ -1,3 +1,15 @@
+<?php
+$testimonials = new WP_Query([
+    'post_type' => 'testimonial',
+    'posts_per_page' => -1,
+    'post_status' => 'publish'
+]);
+?>
+
+
+
+
+
 <section class="py-16 bg-[#F8F5F0]">
     <div class="container mx-auto px-4">
 
@@ -20,106 +32,61 @@
 
         </div>
 
-        <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
+        <div class="testi-slider">
 
-            <!-- Card -->
+            <?php if ($testimonials->have_posts()): ?>
+                <?php while ($testimonials->have_posts()):
+                    $testimonials->the_post();
 
-            <article class="group bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                    // $customer_type = get_field('customer_type');
+                    // $incentivized = get_field('incentivized');
+                    // $address = get_field('address');
+                    // $rating = get_field('rating') ?: 0; // fallback
+                    ?>
 
-                <div class="overflow-hidden">
+                    <article class="px-1.5">
+                        <div class="group bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
 
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/post1.jpg"
-                        class="w-full h-60 object-cover group-hover:scale-110 transition duration-500" alt="">
+                            <div class="overflow-hidden">
+                                <?php if (has_post_thumbnail()): ?>
+                                    <?php the_post_thumbnail('full', array(
+                                        'class' => 'w-full h-60 object-cover group-hover:scale-110 transition duration-500',
+                                        'alt' => get_the_title()
+                                    )); ?>
+                                <?php else: ?>
+                                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/about-page/qoute-icon.png'); ?>"
+                                        class="w-full h-60 object-cover group-hover:scale-110 transition duration-500"
+                                        alt="<?php esc_attr_e('Default Image', 'textdomain'); ?>">
+                                <?php endif; ?>
+                            </div>
 
-                </div>
+                            <div class="p-6">
+                                <ul class="flex gap-1 items-center text-sm">
+                                    <?php for ($i = 1; $i <= 5; $i++): ?>
+                                        <li class="text-[#FFAE00]"><i class="fa-solid fa-star"></i></li>
+                                    <?php endfor; ?>
+                                </ul>
 
-                <div class="p-6">
-                    <ul class="flex gap-1 items-center text-sm">
-                        <?php for ($i = 0; $i < 5; $i++): ?>
-                            <li class="text-[#FFAE00]"><i class="fa-solid fa-star"></i></li>
-                        <?php endfor; ?>
-                    </ul>
-                    <h3 class="text-lg font-semibold text-coff_black mb-3 group-hover:text-secondary transition">
 
-                        Choosing the Perfect Coffee Packaging
+                                <h3 class="text-lg font-semibold text-coff_black mb-3 group-hover:text-secondary transition">
 
-                    </h3>
+                                    <?php the_title() ?>
 
-                    <p class="text-gray-600 leading-7 mb-6">
+                                </h3>
 
-                        Learn how different packaging materials preserve freshness,
-                        aroma and shelf life for specialty coffee.
+                                <p class="text-gray-600 leading-7 mb-6">
 
-                    </p>
-                </div>
+                                    <?php the_content() ?>
+                                </p>
+                            </div>
 
-            </article>
+                        </div>
+                    </article>
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
+            <?php endif; ?>
 
-            <!-- Card -->
 
-            <article class="group bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
-
-                <div class="overflow-hidden">
-
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/post2.jpg"
-                        class="w-full h-60 object-cover group-hover:scale-110 transition duration-500" alt="">
-
-                </div>
-
-                <div class="p-6">
-                    <ul class="flex gap-1 items-center text-sm">
-                        <?php for ($i = 0; $i < 5; $i++): ?>
-                            <li class="text-[#FFAE00]"><i class="fa-solid fa-star"></i></li>
-                        <?php endfor; ?>
-                    </ul>
-                    <h3 class="text-lg font-semibold text-coff_black mb-3 group-hover:text-secondary transition">
-
-                        Why Freshly Roasted Beans Matter
-
-                    </h3>
-
-                    <p class="text-gray-600 leading-7 mb-6">
-
-                        Discover how roast dates influence flavour,
-                        aroma and the overall coffee experience.
-
-                    </p>
-                </div>
-
-            </article>
-
-            <!-- Card -->
-
-            <article class="group bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
-
-                <div class="overflow-hidden">
-
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/post3.jpg"
-                        class="w-full h-60 object-cover group-hover:scale-110 transition duration-500" alt="">
-
-                </div>
-
-                <div class="p-6">
-                    <ul class="flex gap-1 items-center text-sm">
-                        <?php for ($i = 0; $i < 5; $i++): ?>
-                            <li class="text-[#FFAE00]"><i class="fa-solid fa-star"></i></li>
-                        <?php endfor; ?>
-                    </ul>
-                    <h3 class="text-lg font-semibold text-coff_black mb-3 group-hover:text-secondary transition">
-
-                        Sustainable Packaging for Coffee Brands
-
-                    </h3>
-
-                    <p class="text-gray-600 leading-7 mb-6">
-
-                        Explore eco-friendly packaging solutions that
-                        keep coffee fresh while reducing environmental impact.
-
-                    </p>
-                </div>
-
-            </article>
 
         </div>
 

@@ -30,13 +30,13 @@
                 <div class="flex gap-4 items-center">
 
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brc-certified.webp" alt=""
-                        class="h-12">
+                        class="h-12 w-12">
 
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Institute-cyclos.webp" alt=""
-                        class="h-12">
+                        class="h-12 w-12">
 
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/fda-certified.webp" alt=""
-                        class="h-12">
+                        class="h-12 w-12">
 
                 </div>
 

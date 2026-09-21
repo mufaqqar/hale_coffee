@@ -1220,6 +1220,10 @@ footer .menu li a:hover {
   width: 2.5rem;
 }
 
+.w-12 {
+  width: 3rem;
+}
+
 .w-4 {
   width: 1rem;
 }
@@ -1247,10 +1251,6 @@ footer .menu li a:hover {
 
 .w-full {
   width: 100%;
-}
-
-.w-1 {
-  width: 0.25rem;
 }
 
 .min-w-\[150px\] {

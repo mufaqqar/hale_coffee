@@ -45,10 +45,6 @@ $testimonials = new WP_Query([
                     ?>
 
             <article class="px-1.5">
-
-
-
-
                 <div class="group bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
 
                     <div class="overflow-hidden">
